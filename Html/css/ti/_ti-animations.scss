@@ -1,0 +1,194 @@
+.ng-hide-add, .ng-hide-remove {
+	display:block!important;
+}
+
+/* TASK MANAGER */
+.task.ng-enter, 
+.task.ng-leave { 
+    -webkit-transition: 400ms linear all;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+    background-color: rgba(132, 112, 255, 0.01);
+} 
+ 
+.task.ng-leave.ng-leave-active,
+.task.ng-enter {
+	height: 0;
+	opacity: 0;
+}
+ 
+.task.ng-enter.ng-enter-active, 
+.task.ng-leave {
+	height: 50px;
+	opacity: 1;
+}
+
+/* ALERT PULL OUT */
+
+.alert-pull-out.ng-hide-add, .alert-pull-out.ng-hide-remove {
+	-webkit-transition: 400ms ease-out all;
+
+}
+
+.alert-pull-out.ng-hide {
+	right: -320px;
+}
+
+/* MODAL */
+
+.modal {
+	-webkit-transition: opacity 200ms ease-in-out;
+	opacity: 1;
+}
+
+.modal.ng-hide {
+	-webkit-transition: opacity 100ms ease-in;
+	opacity: 0;
+}
+
+/* PAGE ANIMATION */
+
+/* slide */
+.page.ng-hide {
+	-webkit-animation: pageSlideOut 1s both ease-in;
+}
+.page.ng-hide-remove {
+	-webkit-animation: pageSlideIn 1s both ease-in;
+}
+
+/* slide */
+.app.ng-hide {
+	-webkit-animation: appSlideOut 1s both ease-in;
+}
+.app.ng-hide-remove {
+	-webkit-animation: appSlideIn 1s both ease-in;
+	
+}
+
+.zoomIn {
+	-webkit-animation: selectApp 200ms both ease-in;
+}
+
+@-webkit-keyframes appSlideOut {
+	25% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-20px); }
+	75% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-20px) translateX(-200%); }
+	100% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-20px) translateX(-200%); }
+}
+
+@-webkit-keyframes appSlideIn {
+	0%, 25% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-20px) translateX(200%); }
+	75% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-20px); }
+	100% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(0) translateX(0); }
+}
+
+.zoomOut {
+	&.app-2 {
+		-webkit-animation: showAllAppsLeft 500ms both ease-in;
+	}
+
+	&.app-1 {
+		-webkit-animation: showAllAppsRight 500ms both ease-in;
+		z-index: -1;
+	}
+
+	&.app-0 {
+		-webkit-animation: showAllAppsCenter 500ms both ease-in;
+		z-index: -10;
+	}
+}
+
+@-webkit-keyframes selectApp {
+	0% { -webkit-transform: perspective(1000px) translateZ(-500px); }
+	100% { -webkit-transform: perspective(1000px) translateZ(0); }
+}
+
+@-webkit-keyframes showAllAppsCenter {
+	0% { opacity: 0; -webkit-transform: perspective(1000px) translateZ(0px); }
+	10% { opacity: 0.5; -webkit-transform: perspective(1000px) translateZ(-100px) translateX(101%); }
+	100% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-500px) translateX(0); }
+}
+
+@-webkit-keyframes showAllAppsLeft {
+	0% { -webkit-transform: perspective(1000px) translateZ(0px) translateX(0%); }
+	10% { -webkit-transform: perspective(1000px) translateZ(0px); }
+	100% { -webkit-transform: perspective(1000px) translateZ(-500px) translateX(-105%); }
+}
+
+@-webkit-keyframes showAllAppsRight {
+	0% { opacity: 0; -webkit-transform: perspective(1000px) translateZ(0px) translateX(0%); }
+	10% { opacity: 0.5; -webkit-transform: perspective(1000px) translateZ(-100px) translateX(201%); }
+	100% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(-500px) translateX(105%); }
+}
+
+@-webkit-keyframes pageSlideOut {
+	25% { opacity: .8; -webkit-transform: perspective(1000px) translateZ(0px); }
+	75% { opacity: .8; -webkit-transform: perspective(1000px) translateZ(0px) translateX(-200%); }
+	100% { opacity: .8; -webkit-transform: perspective(1000px) translateZ(0px) translateX(-200%); }
+}
+
+@-webkit-keyframes pageSlideIn {
+	0%, 25% { opacity: .8; -webkit-transform: perspective(1000px) translateZ(0px) translateX(200%); }
+	75% { opacity: .8; -webkit-transform: perspective(1000px) translateZ(0px); }
+	100% { opacity: 1; -webkit-transform: perspective(1000px) translateZ(0) translateX(0); }
+}
+
+/* INSPECTOR WALKING */
+@-webkit-keyframes walking {
+	0% { -webkit-transform: translate(0,0); }
+	60% { -webkit-transform: translate( 180px, 0 ); }
+	100% { -webkit-transform: translate( 110px, 73px); }
+}
+
+@-webkit-keyframes inspector {
+	0%, 100% { -webkit-box-shadow: inset 0 0 3px 1px #209420, 0 0 15px 2px $good-color; }
+	50% { -webkit-box-shadow: inset 0 0 3px 1px #209420, 0 0 0px 2px $good-color; }
+}
+
+/* ALERT ANIMATIONS */
+@-webkit-keyframes pulsing-dot {
+	0%, 100% { background-size: 50px 50px; }
+	50% { background-size: 55px 55px; }
+}
+
+/* TRAIN ANIMATIONS */
+@-webkit-keyframes train-0 {
+	0% { -webkit-transform: translate(0px, 0px); }
+	100% { -webkit-transform: translate(410px, 0px); }
+}
+
+@-webkit-keyframes train-1 {
+	0% { -webkit-transform: translate(0px, 0px); }
+	15% { -webkit-transform: translate(0px, -50px); }
+	100% { -webkit-transform: translate(210px, -266px); }
+}
+
+@-webkit-keyframes train-2 {
+	0% { -webkit-transform: translate(0px, 0px); }
+	50% { -webkit-transform: translate(141px, -140px); }
+	63% { -webkit-transform: translate(141px, -240px); }
+	75% { -webkit-transform: translate(61px, -240px); }
+	100% { -webkit-transform: translate(-40px, -330px); }
+}
+
+@-webkit-keyframes pulse-disable {
+	0% { background-color: $primary-color; -webkit-box-shadow: 0 0 15px 2px $highlight-color; }
+	30% { background-color: $light-gray; -webkit-box-shadow: 0 0 15px 2px $highlight-color; }
+	60% { background-color: $primary-color; -webkit-box-shadow: 0 0 15px 2px $highlight-color; }
+	100% { background-color: $light-gray; -webkit-box-shadow: 0 0 0px 0px $highlight-color; }
+}
+
+@-webkit-keyframes pulse-select {
+	0% { background-color: $primary-color; -webkit-box-shadow: 0 0 15px 2px $alert-color; }
+	30% { background-color: $alert-color;  -webkit-box-shadow: 0 0 15px 2px $alert-color;}
+	60% { background-color: $primary-color;  -webkit-box-shadow: 0 0 15px 2px $alert-color;}
+	100% { background-color: $alert-color;  -webkit-box-shadow: 0 0 0px 0px $alert-color;}
+}
+
+@-webkit-keyframes blinky-light {
+	0%, 30%, 60%, 90% { -webkit-box-shadow: 0 0 0 0 #43BB43; }
+	15%, 45%, 75% { -webkit-box-shadow: 0 0 10px 10px #43BB43; }
+	100% {  -webkit-box-shadow: 0 0 0 0 #43BB43; }
+}

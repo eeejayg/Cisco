@@ -1,0 +1,633 @@
+.map-wrap {
+	display: block;
+	height: 648px;
+	width: 768px;
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+}
+
+.map-position {
+	display: block;
+	position: absolute;
+}
+
+.the-map {
+	@extend .map-position;
+	height: 650px;
+	width: 100%;
+	background: transparent url('../imgs/ti/CiscoLive2014_SanFran_ipad_regionalmap.png') center no-repeat;
+	background-size: cover;
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* ROUTES */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.route {
+		@extend .map-position;
+		@extend .clickable;
+	.section {
+
+		&.pulseselect * {
+			-webkit-animation: pulse-select 2s linear forwards;
+		}
+
+		* {
+			@extend .map-position;
+			-webkit-transition: background-color 0.5s ease;
+			background: $primary-color;
+
+			&.disabled {
+				background: $light-gray;
+			}
+
+			&.pulsedisable {
+				-webkit-animation: pulse-disable 2s linear forwards;
+			}
+
+			
+		}
+
+		&.selected {
+			*{
+				background: $alert-color;
+			}
+		}
+
+
+	}
+
+	.leg {
+		border-radius: 4px;
+	}
+
+	.stop {
+		height: 17px;
+		width: 17px;
+		border-radius: 17px;
+	}
+
+
+	&.route-0 {
+		.section-0 {
+			.leg-0 {
+				top: -10px;
+				left: 20px;
+				height: 275px;
+				width: 4px;
+			}
+		}
+	}
+
+	&.route-1 {
+		* {
+			width: 4px;
+		}
+
+		.section-0 {
+			.leg-0 {
+				height: 348px;
+				top: -75px;
+				left: 553px;
+				-webkit-transform: rotate(45deg);
+			}
+
+			.leg-1 {
+				height: 40px;
+				top: 220px;
+				left: 430px;
+			}
+		}
+
+		.section-1 {
+			.leg-0 {
+				height: 382px;
+				top: 217px;
+				left: 297px;
+				-webkit-transform: rotate(45deg);
+			}
+		}
+
+		.section-2 {
+			.leg-0 {
+				height: 200px;
+				top: 510px;
+				left: 95px;
+				-webkit-transform: rotate(45deg);
+			}
+		}
+	}
+
+	&.route-2 {
+
+		.section-0 {
+			.leg-0 {
+				top: -10px;
+				left: 652px;
+				height: 327px;
+				width: 4px;
+			}
+
+			.stop-0 {
+				top: 157px;
+				left: 645px;
+			}
+		}
+
+		.section-1 {
+			.leg-0 {
+				top: 253px;
+				left: 652px;
+				height: 65px;
+				width: 4px;
+			}
+
+			.leg-1 {
+				top: 303px;
+				left: 607px;
+				height: 118px;
+				width: 4px;
+				-webkit-transform: rotate(45deg);
+			}
+
+				.stop-0 {
+					top: 308px;
+					left: 644px;
+				}
+
+				.stop-1 {
+					top: 396px;
+					left: 558px;
+				}
+		}
+	}
+
+	&.route-3 {
+		.section-0 {
+			.leg-0 {
+				height: 4px;
+				width: 412px;
+				top: 263px;
+				left: 20px;
+			}
+
+			.stop-0 {
+				left: 16px;
+				top: 257px;
+			}
+
+			.stop-1 {
+				left: 249px;
+				top: 256px;
+			}
+
+			.stop-2 {
+				left: 371px;
+				top: 256px;
+			}
+		}
+	}
+
+	&.route-4 {
+		.section-0 {
+			.leg-0 {
+				width: 130px;
+				height: 4px;
+				top: 249px;
+				left: 654px;
+			}
+		}
+	}
+
+	&.route-5 {
+		.section-0 {
+			.leg-0 {
+				top: 265px;
+				left: 5px;
+				height: 36px;
+				width: 4px;
+				-webkit-transform: rotate(45deg);
+				border-radius: 0;
+			}
+		}
+	}
+
+	&.route-6 {
+		.section-0 {
+			.leg-0 {
+				top: 334px;
+				left: 33px;
+				height: 147px;
+				width: 4px;
+				-webkit-transform: rotate(135deg);
+			}
+			.leg-1 {
+				top: 458px;
+				left: 88px;
+				height: 4px;
+				width: 74px;
+			}
+			.leg-2 {
+				top: 459px;
+				left: 159px;
+				height: 86px;
+				width: 4px;
+			}
+
+			.stop-0 {
+				top: 449px;
+				left: 79px;
+
+			}
+		}
+	}
+
+	&.route-7 {
+		.section-0 {
+			.leg-0 {
+				top: 484px;
+				left: 380px;
+				height: 4px;
+				width: 143px;
+			}
+			.stop-0 {
+				top: 478px;
+				left: 370px;
+			}
+		}
+
+		.section-1 {
+			.leg-0 {
+				top: 484px;
+				left: 521px;
+				height: 4px;
+				width: 250px;
+			}
+			.stop-0 {
+				top: 478px;
+				left: 639px;
+			}
+		}
+	}
+
+	&.route-8 {
+		.section-0 {
+			.leg-0 {
+				height: 180px;
+				width: 4px;
+				left: 520px;
+				top: 480px;
+			}
+		}
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* TRAINS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.train-object {
+	@extend .clickable;
+	height: 50px;
+	width: 50px;
+	@extend .icon-128.train;
+	z-index: 100;
+
+	&.train-0 {
+		top: 438px;
+		left: 367px;
+		-webkit-animation: train-0 40s linear forwards;
+	}
+
+	&.train-1 {
+		top: 234px;
+		left: 407px;
+		-webkit-animation: train-1 50s linear forwards;
+	}
+
+	&.train-2 {
+		top: 650px;
+		left: -5px;
+		&.startTrain {
+			-webkit-animation: train-2 20s linear forwards;
+		}
+	}
+
+	.info-bubble {
+		.stat {
+			@extend .col-xs-4;
+			float: left;
+			height: 70px;
+			text-align: center;
+
+			.stat-value {
+				display: block;
+				text-transform: uppercase;
+				font-size: 12px;
+			}
+		}
+
+		&.above {
+			top: -220px;
+			left: -110px;
+		}
+
+		&.below {
+			bottom: -170px;
+			left: -110px;
+		}
+
+		&.left {
+			right: 70px;
+			top: -70px;
+		}
+
+		&.right {
+			left: 70px;
+			top: -70px;
+		}
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* STATIONS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.station-object {
+	@extend .clickable;
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+	border: 11px double $primary-color;
+	background-color: $whitish;
+	-webkit-transition: border-color 0.5s ease;
+
+	&.selected {
+		border-color: $alert-color;
+	}
+
+	&.station-0 {
+		top: 239px;
+		left: 410px;
+	}
+
+	&.station-1 {
+		top: 225px;
+		left: 629px;
+	}
+
+	&.station-2 {
+		top: 515px;
+		left: 137px;
+	}
+
+	&.station-3 {
+		top: 462px;
+		left: 497px;
+	}
+
+	.info-bubble {
+		&.above {
+			bottom: 60px;
+			left: -122px;
+		}
+
+		&.below {
+			top: 60px;
+			left: -122px;
+		}
+
+		&.left {
+			right: 60px;
+			top: -103px;
+		}
+
+		&.right {
+			left: 60px;
+			top: -103px;
+		}
+
+		.info {
+			.icon {
+				@extend .icon-256.railway_station;
+			}
+		}
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* LIGHTS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.light-object {
+	@extend .clickable;
+	height: 25px;
+	width: 25px;
+	border-radius: 15px;
+	border: 5px double $primary-color;
+
+	&.light-0 {
+		top: 521px;
+		left: 319px;
+	}
+
+	.info-bubble {
+		&.above {
+			bottom: 45px;
+			left: -168px;
+		}
+
+		&.below {
+			top: 45px;
+			left: -168px;
+		}
+
+		&.left {
+			right: 45px;
+			top: -95px;
+		}
+
+		&.right {
+			left: 45px;
+			top: -95px;
+		}
+
+		.info {
+			.icon {
+				@extend .icon-256.traffic-light2;
+			}
+		}
+	}	
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* ALERTS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.alert-object {
+	@extend .clickable;
+	height: 75px;
+	width: 75px;
+	background-image: url('../imgs/icons/alert-beacon.png');
+	background-size: 50px 50px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-animation: pulsing-dot 1s linear infinite;
+
+	&.alert-0 {
+		top: 325px;
+		left: 303px;
+	}
+
+	.info-bubble {
+		background-color: $alert-color;
+		color: $whitish;
+		-webkit-animation: none;
+		padding: 0 15px;
+
+		.info-bubble-arrow {
+			background-image: url('../imgs/icons/info-bubble-alert-arrow.png');
+		}
+
+		h2 {
+			margin: 0;
+		}
+
+		.buttons {
+			padding-bottom: 10px;
+			button {
+				background-color: transparent;
+				color: $whitish;
+				&:hover, &:active {
+					background-color: rgba(255, 255, 255, 0.1);
+				}
+			}
+		}
+
+		&.above {
+			bottom: 50px;
+			left: -168px;
+		}
+
+		&.below {
+			top: 50px;
+			left: -168px;
+		}
+
+		&.left {
+			right: 85px;
+			top: -35px;
+		}
+
+		&.right {
+			left: 50px;
+			top: -18px;
+		}
+
+		h2 {
+			text-align: left;
+		}
+
+		.icon {
+			@extend .icon-128.white.warning_shield;
+		}
+
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* INFO BUBBLES */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.info-bubble {
+	display: table;
+	position: absolute;
+	padding: 15px;
+	width: 270px;
+	background-color: rgba(255, 255, 255, 0.86);
+	border-radius: 10px;
+
+	.info-bubble-arrow {
+		background-image: url('../imgs/icons/info-bubble-arrow.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		position: absolute;
+		height: 20px;
+		width: 50px;
+	}
+
+	h2 {
+		margin-top: 0px;
+		text-align: center;
+	}
+
+	.info {
+		display: table;
+		margin: 10px auto;
+
+		.icon {
+			display: table-cell;
+			vertical-align: middle;
+			width: 50px;
+		}
+
+		.details {
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 20px;
+			label {
+				font-weight: normal;
+			}
+		}
+
+	}
+
+	.buttons {
+		clear: both;
+		text-align: center;
+		border-top: 1px solid $light-gray;
+		padding-top: 10px;
+		button {
+			width: 48%;
+			margin: 2px 0;
+		}
+	}
+
+	&.above {
+		.info-bubble-arrow {
+			bottom: -18px;
+			left: 50%;
+			margin-left: -25px;
+		}
+	}
+
+	&.below {
+		.info-bubble-arrow {
+			top: -15px;
+			left: 50%;
+			margin-left: -25px;
+			-webkit-transform: rotate(0.5turn);
+		}
+	}
+
+	&.left {
+		.info-bubble-arrow {
+			right: -31px;
+			top: 50%;
+			margin-top: -10px;
+			-webkit-transform: rotate(0.75turn);
+		}
+	}
+	&.right {
+		left: 70px;
+		top: -50px;
+		.info-bubble-arrow {
+			left: -31px;
+			top: 50%;
+			margin-top: -10px;
+			-webkit-transform: rotate(0.25turn);
+		}
+	}
+}

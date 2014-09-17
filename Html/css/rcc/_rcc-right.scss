@@ -1,0 +1,195 @@
+.right-overview {
+  .alert-list {
+    li {
+      display: table;
+      border-bottom: 1px solid $light-gray;
+      height: 95px;
+      width: 100%;
+    }
+
+    li:nth-child(5) {
+      border-bottom: 0;
+    }
+
+    .icon-wrap, .msg-wrap {
+      display: table-cell;
+      height: 95px;
+    }
+
+    .icon-wrap {
+      position: relative;
+      width: 95px;
+
+      .icon {
+        @extend .icon-128;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    .msg-wrap {
+      vertical-align: middle;
+      padding-left: 0 15px;
+    }
+
+    .msg {
+      display: block;
+      color: $dark-blue;
+    }
+
+    .date {
+      color: $light-gray;
+    }
+  }
+
+  .data-center {
+    text-align: center;
+    padding-top: 15px;
+    margin: 0;
+
+    .column {
+      border-left: 1px solid $light-gray;
+
+      &:first-child {
+        border: 0;
+      }
+    }
+
+    .title {
+      text-transform: uppercase;
+      padding-top: 4px;
+      height: 44px;
+      // width: 100px;
+      color: $dark-blue;
+      font-weight: bold;
+      line-height: 20px;
+    }
+
+    .value {
+      color: $good-color;
+      font-size: 36px;
+      height: 64px;
+      line-height: 64px;
+
+      .icon-wrap {
+        display: inline-block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto;
+
+        .icon {
+          @extend .icon-128;
+          position: absolute;
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      .health-bars {
+        display: block;
+
+        span {
+          display: inline-block;
+          height: 40px;
+          width: 18px;
+          border-radius: 18px;
+          margin: ((64px - 40px) / 2) 2px;
+          background-color: $light-gray;
+        }
+
+        &.good {
+          span {
+            background-color: $good-color;
+          }
+        }
+        &.fair {
+          span:not(:last-child) {
+            background-color: $warning-color;
+          }
+        }
+        &.bad {
+          span:first-child {
+            background-color: $bad-color;
+          }
+        }
+
+      }
+
+    }
+
+    .status {
+      line-height: 20px;
+      text-transform: uppercase;
+      color: $light-gray;
+    }
+  }
+
+  .info-box {
+    p span {
+      display: inline-block;
+    }
+  }
+
+  .alerts.info-box {
+    height: 550px;
+  }
+
+  .info-box-row .info-box {
+    height: 285px;
+    .row {
+      height: auto;
+    }
+
+    .btn-row {
+      position: absolute;
+      bottom: 10px;
+      width: 80%;
+    }
+  }
+
+  button {
+    @extend .btn;
+    padding: 12px;
+    width: 80%;
+    background: white;
+    color: $highlight-color;
+    border: 2px solid $highlight-color;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $highlight-color;
+      border-color: $highlight-color;
+      color: white;
+    }
+  }
+
+  .value-box {
+    display: inline-block;
+    vertical-align: top;
+
+    .value2 {
+      display: block;
+    }
+  }
+
+  .status-count-1 p {
+    margin-top: 10px;
+  }
+  .status-count-2 p {
+    margin-top: 10px;
+  }
+  .status-count-3 p {
+    margin-top: 8px;
+  }
+  .status-count-4 p {
+    margin-top: 6px;
+  }
+  .status-count-5 p {
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,462 @@
+.map-wrap {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.the-map {
+	position: relative;
+  	height: (720px - 50);
+	width: 100%;
+	background: transparent url('../imgs/rcc/CiscoLive_SF2014_RCC_map.png') center no-repeat;
+	// background-size: cover;
+}
+
+/* TRAIN ANIMATIONS */
+@-webkit-keyframes train-0 {
+	  0% { -webkit-transform: translate(133px, 216px); }
+	 44% { -webkit-transform: translate(737px, 216px); }
+	 88% { -webkit-transform: translate(133px, 216px); }
+	 94% { -webkit-transform: translate( 78px, 270px); }
+	100% { -webkit-transform: translate(133px, 216px); }
+}
+
+@-webkit-keyframes train-1 {
+	 //  0% { -webkit-transform: translate(736px, 574px); }
+	 // 15% { -webkit-transform: translate(794px, 520px); }
+	 // 20% { -webkit-transform: translate(893px, 520px); }
+	  0% { -webkit-transform: translate(946px, 467px); }
+	 20% { -webkit-transform: translate(946px, 415px); }
+	 30% { -webkit-transform: translate(1096px, 265px); }
+	 40% { -webkit-transform: translate(946px, 415px); }
+	 50% { -webkit-transform: translate(946px, 467px); }
+	 60% { -webkit-transform: translate(893px, 520px); }
+	 75% { -webkit-transform: translate(794px, 520px); }
+	100% { -webkit-transform: translate(736px, 574px); }
+}
+
+@-webkit-keyframes train-2 {
+	  0% { -webkit-transform: translate( 80px, 270px); }
+	  5% { -webkit-transform: translate( 50px, 290px); }
+	 10% { -webkit-transform: translate( 50px, 470px); }
+	 17% { -webkit-transform: translate(157px, 470px); }
+	 20% { -webkit-transform: translate(157px, 470px); }
+	 25% { -webkit-transform: translate(211px, 470px); }
+	 30% { -webkit-transform: translate(254px, 510px); }
+	 35% { -webkit-transform: translate(377px, 510px); }
+	 45% { -webkit-transform: translate(437px, 570px); }
+	 50% { -webkit-transform: translate(736px, 570px); }
+	 55% { -webkit-transform: translate(437px, 570px); }
+	 60% { -webkit-transform: translate(377px, 510px); }
+	 75% { -webkit-transform: translate(254px, 510px); }
+	 80% { -webkit-transform: translate(211px, 470px); }
+	 82% { -webkit-transform: translate(157px, 470px); }
+	 85% { -webkit-transform: translate(157px, 470px); }
+	 90% { -webkit-transform: translate( 50px, 470px); }
+	 95% { -webkit-transform: translate( 50px, 290px); }
+	100% { -webkit-transform: translate( 80px, 270px); }
+}
+
+.clickable {
+	position: absolute;
+	cursor: pointer;
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* TRAINS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.train-object {
+	@extend .clickable;
+	@extend .icon-128.train;
+	top: 0;
+	height: 50px;
+	width: 50px;
+	z-index: 10;
+
+	&.train-0 {
+		-webkit-animation: train-0 400s linear infinite;
+	}
+
+	&.train-1 {
+		-webkit-animation: train-1 350s linear infinite;
+	}
+
+	&.train-2 {
+		-webkit-animation: train-2 400s linear infinite;
+	}
+
+	.info-bubble {
+		width: 350px !important;
+
+		.hack48 {
+			height: 205px;
+		}
+
+		.stat {
+			// @extend .col-xs-3;
+			width: 25%;
+			float: left;
+			// height: 70px;
+			text-align: center;
+
+			.stat-value {
+				display: block;
+				text-transform: uppercase;
+				// font-size: 12px;
+			}
+		}
+
+		&.above {
+			top: -240px;
+			left: -110px;
+		}
+
+		&.below {
+			bottom: -170px;
+			left: -110px;
+		}
+
+		&.left {
+			right: 70px;
+			top: -85px;
+		}
+
+		&.right {
+			left: 70px;
+			top: -85px;
+		}
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* ROUTES */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.route {
+		position: absolute;
+		top: 0;
+		@extend .clickable;
+	.section {
+
+		.stop, .stop div, .leg {
+			position: absolute;
+		}
+
+		.stop div, .leg {
+			background: $primary-color;
+
+			&.disabled {
+				background: $light-gray;
+			}
+		}
+
+		&.selected {
+			.stop div, .leg {
+				background: $good-color;
+			}
+		}
+
+	}
+
+	.leg {
+		border-radius: 4px;
+	}
+
+	.stop {
+		height: (11px + 40px);
+		width: (11px + 40px);
+
+		div {
+			top: 20px;
+			left: 20px;
+			height: 11px;
+			width: 11px;
+			border-radius: 17px;
+		}
+	}
+
+	.info-bubble {
+		width: 325px;
+
+		.hack48 {
+			height: 170px;
+		}
+	}
+
+
+	&.route-0 {
+		.section-0 {
+			.leg-0 {
+				top: 323px;
+				left: 475px;
+				height: 5px;
+				width: 205px;
+			}
+
+			.leg-1 {
+				top: 296px;
+				left: 409px;
+				height: 188px;
+				width: 5px;
+				-webkit-transform: rotate(45deg);
+			}
+
+			.leg-2 {
+				top:452px;
+				left: 237px;
+				height: 5px;
+				width: 112px;
+			}
+
+			.leg-3 {
+				top: 449px;
+				left: 229px;
+				height: 28px;
+				width: 5px;
+				-webkit-transform: rotate(45deg);
+			}
+
+			.leg-4 {
+				top: 470px;
+				left: 221px;
+				height: 24px;
+				width: 5px;
+				border-radius: 0;
+			}
+
+			.stop-0 {
+				top: 300px;
+				left: 545px;
+			}
+
+
+			.info-bubble {
+				&.above {
+					bottom: -300px;
+					left: 440px;
+					.info-bubble-arrow {
+						bottom: -16px;
+						left: 110px;
+					}
+				}
+			}
+		}
+	}
+
+
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* STATIONS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.station-object {
+	@extend .clickable;
+	height: 30px;
+	width: 30px;
+	border-radius: 50px;
+	border: 5px solid $primary-color;
+	background-color: $whitish;
+
+	&.selected {
+		border-color: $good-color;
+	}
+
+	&.station-0 {
+		top: 96px;
+		left: 77px;
+	}
+
+	&.station-1 {
+		height: 36px;
+		width: 37px;
+		border-radius: 0;
+		border: none;
+		background: transparent url(../imgs/rcc/icons/Station_HQ.png) no-repeat 0 0;
+
+		top: 222px;
+		left: 744px;
+		&.selected {
+			border-color: none;
+			background: transparent url(../imgs/rcc/icons/Station_HQ_Green.png) no-repeat 0 0;
+		}
+	}
+
+	&.station-2 {
+		top: 186px;
+		left: 1196px;
+	}
+
+	&.station-3 {
+		top: 282px;
+		left: 87px;
+	}
+
+	&.station-4 {
+		top: 347px;
+		left: 424px;
+	}
+
+	&.station-5 {
+		top: 311px;
+		left: 659px;
+	}
+
+	&.station-6 {
+		top: 282px;
+		left: 1104px;
+	}
+
+	&.station-7 {
+		top: 484px;
+		left: 167px;
+	}
+
+	&.station-8 {
+		top: 518px;
+		left: 512px;
+	}
+
+	&.station-9 {
+		top: 584px;
+		left: 747px;
+	}
+
+	.info-bubble {
+		width: 370px;
+
+		&.above {
+			bottom: 50px;
+			left: -176px;
+		}
+
+		&.below {
+			top: 50px;
+			left: -150px;
+		}
+
+		&.left {
+			right: 50px;
+			top: -76px;
+		}
+
+		&.right {
+			left: 50px;
+			top: -76px;
+		}
+
+		.info {
+			.icon {
+				@extend .icon-256.railway_station;
+			}
+		}
+	}
+
+	&.station-1 .info-bubble.above {
+		bottom: 58px;
+		left: -143px;
+		width: 320px;
+	}
+
+	.hack48 {
+		height: 140px;
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* INFO BUBBLES */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.info-bubble {
+	display: table;
+	position: absolute;
+	padding: 15px;
+	width: 270px;
+	background-color: white;
+	border-radius: 10px;
+	z-index: 100;
+
+	.info-bubble-arrow {
+		background-image: url('../imgs/icons/info-bubble-arrow-solid.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		position: absolute;
+		height: 20px;
+		width: 50px;
+	}
+
+	h2 {
+		margin-top: 0px;
+		text-align: left;
+		border-bottom: 1px solid $light-gray;
+	}
+
+	.info {
+		display: table;
+		margin: 10px auto;
+
+		.icon {
+			display: table-cell;
+			vertical-align: middle;
+			width: 50px;
+		}
+
+		.details {
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 20px;
+			label {
+				font-weight: normal;
+			}
+		}
+
+	}
+
+	.buttons {
+		clear: both;
+		text-align: center;
+		border-top: 1px solid $light-gray;
+		padding-top: 10px;
+		button {
+			width: 48%;
+			margin: 2px 0;
+		}
+	}
+
+	&.above {
+		.info-bubble-arrow {
+			bottom: -18px;
+			left: 50%;
+			margin-left: -25px;
+		}
+	}
+
+	&.below {
+		.info-bubble-arrow {
+			top: -15px;
+			left: 50%;
+			margin-left: -25px;
+			-webkit-transform: rotate(0.5turn);
+		}
+	}
+
+	&.left {
+		.info-bubble-arrow {
+			right: -31px;
+			top: 50%;
+			margin-top: -10px;
+			-webkit-transform: rotate(0.75turn);
+		}
+	}
+	&.right {
+		left: 70px;
+		top: -50px;
+		.info-bubble-arrow {
+			left: -31px;
+			top: 50%;
+			margin-top: -10px;
+			-webkit-transform: rotate(0.25turn);
+		}
+	}
+}

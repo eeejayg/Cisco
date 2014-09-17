@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08720EA5191EA8500056A961 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08720EA4191EA8500056A961 /* Foundation.framework */; };
+		08720EA7191EA8500056A961 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08720EA6191EA8500056A961 /* CoreGraphics.framework */; };
+		08720EA9191EA8510056A961 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08720EA8191EA8510056A961 /* UIKit.framework */; };
+		08720EAF191EA8510056A961 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08720EAD191EA8510056A961 /* InfoPlist.strings */; };
+		08720EB1191EA8510056A961 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08720EB0191EA8510056A961 /* main.m */; };
+		08720EB5191EA8510056A961 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08720EB4191EA8510056A961 /* AppDelegate.m */; };
+		08720EB8191EA8510056A961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08720EB6191EA8510056A961 /* Main.storyboard */; };
+		08720EBB191EA8510056A961 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08720EBA191EA8510056A961 /* ViewController.m */; };
+		08720EBD191EA8510056A961 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08720EBC191EA8510056A961 /* Images.xcassets */; };
+		08720EC4191EA8510056A961 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08720EC3191EA8510056A961 /* XCTest.framework */; };
+		08720EC5191EA8510056A961 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08720EA4191EA8500056A961 /* Foundation.framework */; };
+		08720EC6191EA8510056A961 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08720EA8191EA8510056A961 /* UIKit.framework */; };
+		08720ECE191EA8510056A961 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08720ECC191EA8510056A961 /* InfoPlist.strings */; };
+		08720ED0191EA8510056A961 /* TrainsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08720ECF191EA8510056A961 /* TrainsTests.m */; };
+		08720EE0191EB2470056A961 /* website in Resources */ = {isa = PBXBuildFile; fileRef = 08720EDF191EB2470056A961 /* website */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08720EC7191EA8510056A961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08720E99191EA8500056A961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08720EA0191EA8500056A961;
+			remoteInfo = Trains;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08720EA1191EA8500056A961 /* CISCO CLTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CISCO CLTI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08720EA4191EA8500056A961 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		08720EA6191EA8500056A961 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		08720EA8191EA8510056A961 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		08720EAC191EA8510056A961 /* CISCO CLTI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CISCO CLTI-Info.plist"; sourceTree = "<group>"; };
+		08720EAE191EA8510056A961 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08720EB0191EA8510056A961 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08720EB2191EA8510056A961 /* CISCO CLTI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CISCO CLTI-Prefix.pch"; sourceTree = "<group>"; };
+		08720EB3191EA8510056A961 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		08720EB4191EA8510056A961 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		08720EB7191EA8510056A961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08720EB9191EA8510056A961 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		08720EBA191EA8510056A961 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		08720EBC191EA8510056A961 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		08720EC2191EA8510056A961 /* CISCO CLTITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CISCO CLTITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08720EC3191EA8510056A961 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		08720ECB191EA8510056A961 /* CISCO CLTITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CISCO CLTITests-Info.plist"; sourceTree = "<group>"; };
+		08720ECD191EA8510056A961 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08720ECF191EA8510056A961 /* TrainsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainsTests.m; sourceTree = "<group>"; };
+		08720EDF191EB2470056A961 /* website */ = {isa = PBXFileReference; lastKnownFileType = folder; path = website; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08720E9E191EA8500056A961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08720EA7191EA8500056A961 /* CoreGraphics.framework in Frameworks */,
+				08720EA9191EA8510056A961 /* UIKit.framework in Frameworks */,
+				08720EA5191EA8500056A961 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08720EBF191EA8510056A961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08720EC4191EA8510056A961 /* XCTest.framework in Frameworks */,
+				08720EC6191EA8510056A961 /* UIKit.framework in Frameworks */,
+				08720EC5191EA8510056A961 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08720E98191EA8500056A961 = {
+			isa = PBXGroup;
+			children = (
+				08720EDF191EB2470056A961 /* website */,
+				08720EAA191EA8510056A961 /* Trains */,
+				08720EC9191EA8510056A961 /* TrainsTests */,
+				08720EA3191EA8500056A961 /* Frameworks */,
+				08720EA2191EA8500056A961 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		08720EA2191EA8500056A961 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08720EA1191EA8500056A961 /* CISCO CLTI.app */,
+				08720EC2191EA8510056A961 /* CISCO CLTITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08720EA3191EA8500056A961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08720EA4191EA8500056A961 /* Foundation.framework */,
+				08720EA6191EA8500056A961 /* CoreGraphics.framework */,
+				08720EA8191EA8510056A961 /* UIKit.framework */,
+				08720EC3191EA8510056A961 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08720EAA191EA8510056A961 /* Trains */ = {
+			isa = PBXGroup;
+			children = (
+				08720EB3191EA8510056A961 /* AppDelegate.h */,
+				08720EB4191EA8510056A961 /* AppDelegate.m */,
+				08720EB6191EA8510056A961 /* Main.storyboard */,
+				08720EB9191EA8510056A961 /* ViewController.h */,
+				08720EBA191EA8510056A961 /* ViewController.m */,
+				08720EBC191EA8510056A961 /* Images.xcassets */,
+				08720EAB191EA8510056A961 /* Supporting Files */,
+			);
+			path = Trains;
+			sourceTree = "<group>";
+		};
+		08720EAB191EA8510056A961 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08720EAC191EA8510056A961 /* CISCO CLTI-Info.plist */,
+				08720EAD191EA8510056A961 /* InfoPlist.strings */,
+				08720EB0191EA8510056A961 /* main.m */,
+				08720EB2191EA8510056A961 /* CISCO CLTI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08720EC9191EA8510056A961 /* TrainsTests */ = {
+			isa = PBXGroup;
+			children = (
+				08720ECF191EA8510056A961 /* TrainsTests.m */,
+				08720ECA191EA8510056A961 /* Supporting Files */,
+			);
+			path = TrainsTests;
+			sourceTree = "<group>";
+		};
+		08720ECA191EA8510056A961 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08720ECB191EA8510056A961 /* CISCO CLTITests-Info.plist */,
+				08720ECC191EA8510056A961 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08720EA0191EA8500056A961 /* CISCO CLTI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08720ED3191EA8510056A961 /* Build configuration list for PBXNativeTarget "CISCO CLTI" */;
+			buildPhases = (
+				08720E9D191EA8500056A961 /* Sources */,
+				08720E9E191EA8500056A961 /* Frameworks */,
+				08720E9F191EA8500056A961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CISCO CLTI";
+			productName = Trains;
+			productReference = 08720EA1191EA8500056A961 /* CISCO CLTI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08720EC1191EA8510056A961 /* CISCO CLTITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08720ED6191EA8510056A961 /* Build configuration list for PBXNativeTarget "CISCO CLTITests" */;
+			buildPhases = (
+				08720EBE191EA8510056A961 /* Sources */,
+				08720EBF191EA8510056A961 /* Frameworks */,
+				08720EC0191EA8510056A961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08720EC8191EA8510056A961 /* PBXTargetDependency */,
+			);
+			name = "CISCO CLTITests";
+			productName = TrainsTests;
+			productReference = 08720EC2191EA8510056A961 /* CISCO CLTITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08720E99191EA8500056A961 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = devnull;
+				TargetAttributes = {
+					08720EA0191EA8500056A961 = {
+						DevelopmentTeam = UBCVL8JBXS;
+					};
+					08720EC1191EA8510056A961 = {
+						TestTargetID = 08720EA0191EA8500056A961;
+					};
+				};
+			};
+			buildConfigurationList = 08720E9C191EA8500056A961 /* Build configuration list for PBXProject "CISCO CLTI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08720E98191EA8500056A961;
+			productRefGroup = 08720EA2191EA8500056A961 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08720EA0191EA8500056A961 /* CISCO CLTI */,
+				08720EC1191EA8510056A961 /* CISCO CLTITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08720E9F191EA8500056A961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08720EBD191EA8510056A961 /* Images.xcassets in Resources */,
+				08720EAF191EA8510056A961 /* InfoPlist.strings in Resources */,
+				08720EE0191EB2470056A961 /* website in Resources */,
+				08720EB8191EA8510056A961 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08720EC0191EA8510056A961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08720ECE191EA8510056A961 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08720E9D191EA8500056A961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08720EBB191EA8510056A961 /* ViewController.m in Sources */,
+				08720EB5191EA8510056A961 /* AppDelegate.m in Sources */,
+				08720EB1191EA8510056A961 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08720EBE191EA8510056A961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08720ED0191EA8510056A961 /* TrainsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08720EC8191EA8510056A961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08720EA0191EA8500056A961 /* CISCO CLTI */;
+			targetProxy = 08720EC7191EA8510056A961 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08720EAD191EA8510056A961 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08720EAE191EA8510056A961 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		08720EB6191EA8510056A961 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08720EB7191EA8510056A961 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		08720ECC191EA8510056A961 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08720ECD191EA8510056A961 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		08720ED1191EA8510056A961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		08720ED2191EA8510056A961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08720ED4191EA8510056A961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Trains/CISCO CLTI-Prefix.pch";
+				INFOPLIST_FILE = "Trains/CISCO CLTI-Info.plist";
+				PRODUCT_NAME = "CISCO CLTI";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		08720ED5191EA8510056A961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Trains/CISCO CLTI-Prefix.pch";
+				INFOPLIST_FILE = "Trains/CISCO CLTI-Info.plist";
+				PRODUCT_NAME = "CISCO CLTI";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		08720ED7191EA8510056A961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Trains.app/Trains";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Trains/Trains-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TrainsTests/CISCO CLTITests-Info.plist";
+				PRODUCT_NAME = "CISCO CLTITests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		08720ED8191EA8510056A961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Trains.app/Trains";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Trains/Trains-Prefix.pch";
+				INFOPLIST_FILE = "TrainsTests/CISCO CLTITests-Info.plist";
+				PRODUCT_NAME = "CISCO CLTITests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08720E9C191EA8500056A961 /* Build configuration list for PBXProject "CISCO CLTI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08720ED1191EA8510056A961 /* Debug */,
+				08720ED2191EA8510056A961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08720ED3191EA8510056A961 /* Build configuration list for PBXNativeTarget "CISCO CLTI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08720ED4191EA8510056A961 /* Debug */,
+				08720ED5191EA8510056A961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08720ED6191EA8510056A961 /* Build configuration list for PBXNativeTarget "CISCO CLTITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08720ED7191EA8510056A961 /* Debug */,
+				08720ED8191EA8510056A961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08720E99191EA8500056A961 /* Project object */;
+}

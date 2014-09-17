@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html ng-app="TI">
+<head>
+	<link type="text/css" rel="stylesheet" href="css/ti.css" />
+   <title>Tunnel Inspector</title>
+</head>
+<body ng-controller="tiMainCtrl">
+<!-- Set container to ipad screen size -->
+<div class="container">
+
+<!-- Add apps for webex screenshots -->
+	<div class="app app-0" ng-show="currentApp == 'app-0' || showAllApps" ng-click="selectApp('app-0')" ng-class="{ 'zoomOut': showAllApps }">
+		<header>
+			<div class="status-bar row">
+				<span class="col-xs-5">
+					<div class="row">
+						<span>iPad</span>
+						<div class="ipad wifi"></div>
+					</div>
+				</span>
+				<span class="col-xs-2">
+					<div class="clock" clock="format"></div>
+				</span>
+				<span class="col-xs-5">
+					<div class="row">
+						<span class="pull-right">
+							<div class="ipad bluetooth"></div>
+							<span>97%</span>
+							<div class="ipad battery"></div>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="row">
+				<span class="col-xs-5">
+						Hello, Jim Grubb<span class="status-break">|</span>Secure network status: Connected
+				</span>
+				<span class="col-xs-2"><div class="logo"></div></span>
+				<span class="col-xs-5">
+					<span class="pull-right"><a href="#" ng-click="resetApp()">Logoff</a><span class="status-break">|</span><span class="icon"></span></span>
+				</span>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<div class="page-wrapper">
+
+			<div class="page page-1" ng-show="currentPage == 'page-1'" ng-controller="tiViewDiagnosticsCtrl">
+				<div class="inner-container">
+					<div class="col-xs-5">
+						<div class="broken-panel" ng-click="fixBreaker()">
+							<div class="blinky-light" ng-class="{ goodToGo: lightIsGood }"></div>
+						</div>
+					</div>
+
+					<div class="col-xs-7">
+						<div class="alert-block">
+							<div class="icon"></div>
+
+							<div class="message">
+								<h2>Alert on Panel 32</h2>
+								<p>Multiple replacements of Breaker 3 with the same size breaker isn't reducing the frequency of repair events.</p>
+							</div>
+						</div>
+
+						<div>
+							<div class="call-block" ng-click="launchWebEx()">
+								<h5>Last Tech:</h5>
+								<h5>Marty Smith</h5>
+								<div class="icon"></div>
+								<div class="call-bar">Collaborate</div>
+							</div>
+							<div class="operating-block">
+								<h5>Maintenance History</h5>
+								<div class="operating-graph">
+									<div class="y-label">Services</div>
+									<div class="x-label">Months</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<button class="btn btn-primary">Message</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page page-0" ng-show="currentPage == 'page-0'">
+				<!-- TASK MANAGER -->
+				<div class="task-manager col-xs-3" ng-controller="tiTaskManagerCtrl">
+					<div class="header">
+						<h2>Task Manager</h2>
+					</div>
+					<div class="task-list-wrap">
+						<ul>
+							<li class="task {{ task.type }}" ng-repeat="task in tasks" ng-click="taskClick(task)" ng-class="{ selected: task.isSelected }">
+								<div class="icon-wrap"><div class="icon {{ task.icon }}"></div></div>
+								<div class="task-message-wrap">
+									<div class="task-message">
+										<h3>{{ task.title }}</h3>
+										<p ng-show="task.details">{{ task.details }}</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- THE MAP -->
+				<div class="col-xs-9 map-wrap" ng-controller="tiMapCtrl">
+					<div class="the-map"></div>
+					<!-- THE ROUTES -->
+					<div class="route route-{{ route.id }}" ng-repeat="route in routeObjects">
+						<div class="section section-{{ section.id }}"  ng-repeat="section in route.sections" ng-click="toggleSelect(section)" ng-class="{ pulseselect: section.isPulseSelected, selected: section.isSelected }">
+							<div class="leg leg-{{ leg.id }}" ng-repeat="leg in section.legs" ng-class="{ pulsedisable: section.isPulseDisabled, disabled: section.isDisabled }"></div>
+							<div class="stop stop-{{ stop.id }}" ng-repeat="stop in section.stops"></div>
+						</div>
+					</div>
+
+					<!-- THE TRAINS -->
+					<div class="train-object train-{{ train.id }}" ng-repeat="train in trainObjects" ng-click="toggleSelect(train)" ng-class="{ startTrain: train.id == 2 && trainMoves }">
+						<info-bubble ng-show="train.isSelected && train.showInfoBubble" location="{{ train.infoBubble }}">
+							<h2>{{ train.title }}</h2>
+							<div class="stat" ng-repeat="stat in train.stats">
+								<span class="circle-graph">
+									<span class="stat-value">{{ stat.value }}</span>
+								</span>
+								<span class="stat-name">{{ stat.name }}</span>
+							</div>
+							<div class="buttons">
+								<button class="btn btn-default">Maintenance</button>
+								<button class="btn btn-default">Cancel</button>
+							</div>
+						</info-bubble>
+					</div>
+
+					<!-- THE STATIONS -->
+					<div class="station-object station-{{ station.id }}" ng-repeat="station in stationObjects" ng-click="toggleSelect(station)" ng-class="{ selected: station.isSelected }" ng-style="{ zIndex: station.isSelected ? 100 : 1}">
+						<info-bubble ng-show="station.isSelected && station.showInfoBubble" location="{{ station.infoBubble }}">
+							<h2>{{ station.title }}</h2>
+							<div class="info">
+								<div class="icon"></div>
+								<ul class="details">
+									<li ng-repeat="stat in station.stats"><label>{{ stat.name }}:</label> {{ stat.value }}</li>
+								</ul>
+							</div>
+							<div class="buttons">
+								<button class="btn btn-default">Delay Trains</button>
+								<button class="btn btn-default">Divert Trains</button>
+								<button class="btn btn-default">Close Station</button>
+								<button class="btn btn-default">Cancel</button>
+							</div>
+						</info-bubble>
+					</div>
+
+					<!-- THE LIGHTS -->
+					<div class="light-object light-{{ light.id }}" ng-repeat="light in lightObjects" ng-click="toggleSelect(light)" ng-style="{ zIndex: light.isSelected ? 100 : 1}">
+						<info-bubble ng-show="light.isSelected && light.showInfoBubble" location="{{ light.infoBubble }}">
+							<h2>{{ light.title }}</h2>
+							<div class="info">
+								<div class="icon"></div>
+								<ul class="details">
+									<li ng-repeat="stat in light.stats"><label>{{ stat.name }}:</label> {{ stat.value }}</li>
+								</ul>
+							</div>
+							<div class="buttons">
+								<button class="btn btn-default">Change Signal</button>
+								<button class="btn btn-default">Configure Speed</button>
+							</div>
+						</info-bubble>
+					</div>
+
+					<!-- THE ALERTS -->
+					<div class="alert-object alert-{{ alert.id }}" ng-repeat="alert in alertObjects" ng-click="toggleSelect(alert)" ng-style="{ zIndex: alert.isSelected ? 100 : 1}">
+						<info-bubble ng-show="alert.isSelected && alert.showInfoBubble" location="{{ alert.infoBubble }}">
+							<div class="info">
+								<div class="icon"></div>
+								<div class="details">
+									<h2>{{ alert.title }}</h2>
+									<p>{{ alert.details }}</p>
+								</div>
+							</div>
+							<div class="buttons">
+								<button ng-click="clickAlertInfoBubble(alert); $event.stopPropagation()" class="btn btn-default">Details</button>
+								<button class="btn btn-default">Ignore</button>
+							</div>
+						</info-bubble>
+					</div>
+
+					<!-- THE INSPECTOR -->
+					<div class="inspector-wrap" ng-class="{ walker: inspectorWalks }"><div class="inspector-object"></div></div>
+
+					<!-- ALERT PULL OUT -->
+					<div class="alert-pull-out" ng-show="showAlertPullOut" ng-controller="tiAlertPullOutCtrl">
+						<button class="pull-right close"></button>
+						<h2>Alert on Panel 32</h2>
+						<div class="alert-wrap">
+							<div class="icon"></div>
+							<div class="message">
+								<h2>Breaker 3 Outage</h2>
+								<p>Function: Safety Lights</p>
+							</div>
+						</div>
+
+						<h2>Panel Data</h2>
+						<div class="panel-data-wrap">
+							<div class="block">
+								<h3>Connection</h3>
+								<div class="chart-connection">
+									<div class="bar" ng-class="{ connected: bar.connected }" ng-repeat="bar in chartConnection"></div>
+								</div>
+							</div>
+							<div class="block">
+								<h3>Routes Affected</h3>
+								<ul>
+									<li>Route 32 East</li>
+									<li>Track 5 East</li>
+									<li>Track 7 East</li>
+								</ul>
+							</div>
+							<div class="block">
+								<h3>Maintenance History</h3>
+								<div class="operating-graph">
+									<div class="y-label">Services</div>
+									<div class="x-label">Months</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="buttons">
+							<button ng-click="divertTrains()">Divert Trains</button>
+							<button ng-click="viewDiagnostics(alert)">View Diagnostics</button>
+							<button ng-click="closePullOut()">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="clearfix">
+			<span class="col-xs-3 nav-item" ng-class="{ selected: navItem.isSelected }" ng-repeat="navItem in footerNav">
+				<span class="icon {{ navItem.icon }}"></span>
+				<h3 class="navItem-text">{{ navItem.text }}</h3>
+			</span>
+		</footer>
+		<div class="app-icon"></div>
+	</div>
+
+		<!-- THE MODAL -->
+
+		<div class="set-web-ex modal" ng-show="showSetWebEx">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-body">
+					<h2>Set Your WebEx Url</h2>
+					<h3>Please close the keyboard before hitting Test or Ok!</h3>
+					<input class="form-control" type="text" id="{{ webExUrl.id }}" value="{{ webExUrl.value }}" ng-model="webExUrl.value" />
+					<div class="buttons">
+						<button class="btn btn-default" ng-click="launchWebEx(webExUrl.value)">Test</button>
+						<button class="btn btn-primary" ng-click="setWebExUrl(webExUrl.value)">OK!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" ng-show="showModal" ng-controller="tiModalCtrl">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Divert Trains?</h4>
+					</div>
+					<div class="modal-body">
+						<p>Trains on Track 205 will be diverted to Track 278.</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary" ng-click="confirmDivert()">OK</button>
+						<button class="btn btn-primary" ng-click="closeModal()">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script src="js/thirdparty/jquery-2.1.1.min.js"></script>
+<script src="js/thirdparty/angular/angular.min.js"></script>
+<script src="js/thirdparty/angular/angular-animate.min.js"></script>
+<script src="js/thirdparty/angular/angular-touch.min.js"></script>
+<script src="js/thirdparty/underscore-1.6.0-min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/ti/tiMainCtrl.js"></script>
+<script src="js/ti/tiTaskManagerCtrl.js"></script>
+<script src="js/ti/tiMapCtrl.js"></script>
+<script src="js/ti/tiAlertPullOutCtrl.js"></script>
+<script src="js/ti/tiModalCtrl.js"></script>
+<script src="js/ti/tiViewDiagnosticsCtrl.js"></script>
+</body>
+</html>

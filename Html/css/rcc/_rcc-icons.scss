@@ -1,0 +1,22 @@
+@mixin rcc-icon($title, $size) {
+  background: url('../imgs/rcc/icons/' + $title + '-' + $size + '.png') no-repeat;
+  background-size: $size $size;
+  background-position: center;
+}
+
+.icon-75 {
+  &.d3750x { @include rcc-icon(3750x, 75); }
+  &.asr901 { @include rcc-icon(asr901, 75); }
+  &.customer-info { @include rcc-icon(customer-info, 75); }
+  &.ie2000 { @include rcc-icon(iE2000, 75); }
+  &.ie3010 { @include rcc-icon(IE3010, 75); }
+  &.ip-phone { @include rcc-icon(ip-phone, 75); }
+  &.isr-g2 { @include rcc-icon(ISR-G2, 75); }
+  &.link { @include rcc-icon(link, 75); }
+  &.retail-communications { @include rcc-icon(retail-communications, 75); }
+  &.router819 { @include rcc-icon(819router, 75); }
+  &.security { @include rcc-icon(security, 75); }
+  &.surveillance { @include rcc-icon(surveillance, 75); }
+  &.telepresence { @include rcc-icon(telepresence, 75); }
+  &.wireless-access { @include rcc-icon(wireless-access, 75); }
+}

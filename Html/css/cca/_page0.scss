@@ -1,0 +1,59 @@
+.page-0 {
+	.left-section {
+		@extend .col-xs-2;
+
+		li {
+			padding: 30px 0 30px 20px;
+			.icon {
+				@extend .pull-right;
+				@extend .icon-128.blue;
+
+				&.contact {
+					@extend .icon-128.contact;
+				}
+				
+				&.phone {
+					border-left: 1px solid $medium-gray;
+				}
+			}
+
+			&.selected {
+				.icon {
+					@extend .icon-128.white;
+				}
+			}
+		}
+	}
+	.center-section {
+		@extend .col-xs-7;
+		padding: 0 50px;
+
+		.section-header {
+			@extend .tableness;
+			h1 {
+				padding-left: 50px;
+			}
+		}
+		.customer-icon {
+			@extend .icon-256.contact;
+			height: 200px;
+			width: 200px;
+		}
+	}
+
+	.right-section {
+		@extend .col-xs-3;
+
+		.station-stats {
+			li {
+				padding: 30px 0 30px 20px;
+			}	
+		}
+
+		li {
+			.icon {
+				@extend .icon-128.ltblue;
+			}
+		}
+	}
+}

@@ -1,0 +1,211 @@
+@mixin icon($title, $color, $size) {
+	background: url('../imgs/cca/' + $color + '/' + $title + '-' + $size + '-' + $color + '.png') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+
+@mixin noColor($title, $size) {
+	background: url('../imgs/icons/' + $size + 'px/' + $title + '-' + $size + '.png') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+
+@mixin navIcon($title, $size) {
+	background: url('../imgs/cca/nav-bar/' + $title + '-' + $size + '.png') no-repeat;
+	background-size: contain;
+	background-position: center;
+	&:hover, &:active {
+		background-image: url('../imgs/cca/nav-bar/' + $title + '-' + $size + '-transparent.png');
+	}
+}
+
+.icon-35 {
+	&.gray {
+		&.receipt { @include icon(receipt, gray, 35); }
+		&.contactcard { @include icon(contact, gray, 35); }
+		&.creditcard { @include icon(creditcard, gray, 35); }
+		&.suitcase { @include icon(suitcase, gray, 35); }
+	}
+
+	&.white {
+		&.receipt { @include icon(receipt, white, 35); }
+		&.contactcard { @include icon(contact, white, 35); }
+		&.creditcard { @include icon(creditcard, white, 35); }
+		&.suitcase { @include icon(suitcase, white, 35); }
+	}
+}
+
+.icon-128 {
+	&.ltblue {
+		&.doublecloud { @include icon(doublecloud, ltblue, 128); }
+		&.groups { @include icon(groups, ltblue, 128); }
+		&.map { @include icon(map, ltblue, 128); }
+		&.pos_terminal { @include icon(pos_terminal, ltblue, 128); }
+	}
+
+	&.blue {
+		&.document { @include icon(document, blue, 128); }
+		&.end_call { @include icon(end_call, blue, 128); }
+		&.groups { @include icon(groups, blue, 128); }
+		&.info { @include icon(info, blue, 128); }
+		&.lock_filled { @include icon(lock_filled, blue, 128); }
+		&.map { @include icon(map, blue, 128); }
+		&.microphone { @include icon(microphone, blue, 128); }
+		&.phone { @include icon(phone1, blue, 128); }
+		&.pos_terminal { @include icon(pos_terminal, blue, 128); }
+		&.search { @include icon(search, blue, 128); }
+		&.settings { @include icon(settings, blue, 128); }
+
+		&.cloud { @include icon(cloud, blue, 60); }
+	}
+
+	&.gray {
+		&.document { @include icon(document, gray, 128); }
+		&.end_call { @include icon(end_call, gray, 128); }
+		&.groups { @include icon(groups, gray, 128); }
+		&.info { @include icon(info, gray, 128); }
+		&.lock_filled { @include icon(lock_filled, gray, 128); }
+		&.map { @include icon(map, gray, 128); }
+		&.microphone { @include icon(microphone, gray, 128); }
+		&.phone { @include icon(phone1, gray, 128); }
+		&.pos_terminal { @include icon(pos_terminal, gray, 128); }
+		&.search { @include icon(search, gray, 128); }
+		&.settings { @include icon(settings, gray, 128); }
+	}
+
+	&.white {
+		&.document { @include icon(document, white, 128); }
+		&.end_call { @include icon(end_call, white, 128); }
+		&.groups { @include icon(groups, white, 128); }
+		&.info { @include icon(info, white, 128); }
+		&.lock_filled { @include icon(lock_filled, white, 128); }
+		&.map { @include icon(map, white, 128); }
+		&.microphone { @include icon(microphone, white, 128); }
+		&.phone { @include icon(phone1, white, 128); }
+		&.pos_terminal { @include icon(pos_terminal, white, 128); }
+		&.search { @include icon(search, white, 128); }
+		&.settings { @include icon(settings, white, 128); }
+
+		&.genericman { @include icon(genericman, white, 128); }
+	}
+
+	&.contact { @include noColor(contact, 128); }
+	&.logo { @include noColor(logo, 128); }
+}
+
+.icon-256 {
+	&.ltblue {
+		&.doublecloud { @include icon(doublecloud, ltblue, 256); }
+		&.groups { @include icon(groups, ltblue, 256); }
+		&.map { @include icon(map, ltblue, 256); }
+		&.pos_terminal { @include icon(pos_terminal, ltblue, 256); }
+	}
+
+	&.blue {
+		&.document { @include icon(document, blue, 256); }
+		&.end_call { @include icon(end_call, blue, 256); }
+		&.groups { @include icon(groups, blue, 256); }
+		&.info { @include icon(info, blue, 256); }
+		&.lock_filled { @include icon(lock_filled, blue, 256); }
+		&.map { @include icon(map, blue, 256); }
+		&.microphone { @include icon(microphone, blue, 256); }
+		&.phone { @include icon(phone1, blue, 256); }
+		&.pos_terminal { @include icon(pos_terminal, blue, 256); }
+		&.search { @include icon(search, blue, 256); }
+		&.settings { @include icon(settings, blue, 256); }
+	}
+
+	&.gray {
+		&.document { @include icon(document, gray, 256); }
+		&.end_call { @include icon(end_call, gray, 256); }
+		&.groups { @include icon(groups, gray, 256); }
+		&.info { @include icon(info, gray, 256); }
+		&.lock_filled { @include icon(lock_filled, gray, 256); }
+		&.map { @include icon(map, gray, 256); }
+		&.microphone { @include icon(microphone, gray, 256); }
+		&.phone { @include icon(phone1, gray, 256); }
+		&.pos_terminal { @include icon(pos_terminal, gray, 256); }
+		&.search { @include icon(search, gray, 256); }
+		&.settings { @include icon(settings, gray, 256); }
+	}
+
+	&.white {
+		&.document { @include icon(document, white, 256); }
+		&.end_call { @include icon(end_call, white, 256); }
+		&.groups { @include icon(groups, white, 256); }
+		&.info { @include icon(info, white, 256); }
+		&.lock_filled { @include icon(lock_filled, white, 256); }
+		&.map { @include icon(map, white, 256); }
+		&.microphone { @include icon(microphone, white, 256); }
+		&.phone { @include icon(phone1, white, 256); }
+		&.pos_terminal { @include icon(pos_terminal, white, 256); }
+		&.search { @include icon(search, white, 256); }
+		&.settings { @include icon(settings, white, 256); }
+	}
+
+	&.contact { @include noColor(contact, 256); }
+	&.logo { @include noColor(logo, 128); }
+}
+
+.icon-512 {
+	&.ltblue {
+		&.doublecloud { @include icon(doublecloud, ltblue, 512); }
+		&.groups { @include icon(groups, ltblue, 512); }
+		&.map { @include icon(map, ltblue, 512); }
+		&.pos_terminal { @include icon(pos_terminal, ltblue, 512); }
+	}
+
+	&.blue {
+		&.document { @include icon(document, blue, 512); }
+		&.end_call { @include icon(end_call, blue, 512); }
+		&.groups { @include icon(groups, blue, 512); }
+		&.info { @include icon(info, blue, 512); }
+		&.lock_filled { @include icon(lock_filled, blue, 512); }
+		&.map { @include icon(map, blue, 512); }
+		&.microphone { @include icon(microphone, blue, 512); }
+		&.phone { @include icon(phone1, blue, 512); }
+		&.pos_terminal { @include icon(pos_terminal, blue, 512); }
+		&.search { @include icon(search, blue, 512); }
+		&.settings { @include icon(settings, blue, 512); }
+	}
+
+	&.gray {
+		&.document { @include icon(document, gray, 512); }
+		&.end_call { @include icon(end_call, gray, 512); }
+		&.groups { @include icon(groups, gray, 512); }
+		&.info { @include icon(info, gray, 512); }
+		&.lock_filled { @include icon(lock_filled, gray, 512); }
+		&.map { @include icon(map, gray, 512); }
+		&.microphone { @include icon(microphone, gray, 512); }
+		&.phone { @include icon(phone1, gray, 512); }
+		&.pos_terminal { @include icon(pos_terminal, gray, 512); }
+		&.search { @include icon(search, gray, 512); }
+		&.settings { @include icon(settings, gray, 512); }
+	}
+
+	&.white {
+		&.document { @include icon(document, white, 512); }
+		&.end_call { @include icon(end_call, white, 512); }
+		&.groups { @include icon(groups, white, 512); }
+		&.info { @include icon(info, white, 512); }
+		&.lock_filled { @include icon(lock_filled, white, 512); }
+		&.map { @include icon(map, white, 512); }
+		&.microphone { @include icon(microphone, white, 512); }
+		&.phone { @include icon(phone1, white, 512); }
+		&.pos_terminal { @include icon(pos_terminal, white, 512); }
+		&.search { @include icon(search, white, 512); }
+		&.settings { @include icon(settings, white, 512); }
+	}
+
+	&.contact { @include noColor(contact, 512); }
+	&.logo { @include noColor(logo, 512); }
+}
+
+
+.nav-128 {
+	&.back { @include navIcon(back, 128); }
+	&.home { @include navIcon(home, 128); }
+	&.recent { @include navIcon(recent, 128); }
+}

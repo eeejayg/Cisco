@@ -1,0 +1,548 @@
+.menu {
+  background: #fff;
+  height: (720px - 50px);
+
+  .title {
+    display: inline-block;
+    color: $dark-blue;
+    margin-top: 12px;
+    line-height: 30px;
+  }
+
+  ul {
+    border-top: 2px solid $light-gray;
+  }
+
+  li {
+    border-bottom: 1px solid $light-gray;
+    text-align: center;
+    cursor: pointer;
+
+    span {
+      line-height: 75px;
+      font-size: 24px;
+    }
+
+    &:hover, &.selected {
+      background: $highlight-color;
+      color: $whitish;
+    }
+  }
+}
+
+.left-overview {
+  .info-box {
+    margin-top: 26px;
+    height: 620px;
+
+    h2 {
+      height: 54px;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  video {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+.info-box {
+  height: 557px;
+
+  &.track-control {
+    height: 352px;
+  }
+
+  &.communications {
+    margin-top: 20px;
+    height: 184px;
+  }
+}
+
+.info-box-header {
+  font-size: 60px;
+  height: 64px;
+  line-height: 64px;
+
+  .icon {
+    float: left;
+    display: inline-block;
+    background: url('../imgs/rcc/icons/train-128.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    margin: 6px 10px 0;
+
+    &.tunnel {
+      margin-left: 16px;
+    }
+
+    &.railway_station {
+      margin-left: 15px;
+    }
+  }
+}
+
+.border-right {
+  border-right: 2px solid $light-gray;
+}
+
+.spacer {
+  height: 2px;
+  border-bottom: 2px solid $light-gray;
+}
+
+
+.left-train {
+  h2.ms-logo {
+    background: transparent url(../imgs/rcc/microstrategy-logo.png) no-repeat right 25px;
+  }
+
+  .compute-storage {
+    padding: 10px 0;
+
+    .col-xs-5 {
+      border-right: 2px solid $light-gray;
+    }
+
+    h3 {
+      border: 0;
+      height: 25px;
+      line-height: 25px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .compute, .storage {
+      position: relative;
+      padding-left: 74px;
+      height: 64px;
+
+      .icon {
+        @extend .icon-128;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 0;
+      }
+
+      .status {
+        color: $good-color;
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 14px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .row-spacer {
+    margin-top: 12px;
+  }
+
+  .btn-row span {
+    margin: 6px 10px;
+    width: 200px;
+  }
+
+  .train-detail {
+    padding-left: 5px;
+    margin: 30px 0;
+  }
+
+  .total-passengers {
+    height: 214px;
+    background: url(../imgs/rcc/group-512.png) no-repeat left center;
+    background-size: 128px 128px;
+    line-height: 214px;
+    padding-left: 175px;
+    text-transform: uppercase;
+    color: $dark-blue;
+    font-weight: bold;
+  }
+
+  .distribution {
+    padding-top: 10px;
+
+    div {
+      padding: 18px;
+      text-align: center;
+
+      strong {
+        display: inline-block;
+        width: 80px;
+      }
+
+      span {
+        display: inline-block;
+        width: 30px;
+      }
+    }
+  }
+
+  .conductors {
+    height: 355px;
+
+    .row div {
+      text-align: center;
+      height: 255px;
+      background: url(../imgs/rcc/worker-512.png) no-repeat center top;
+      background-size: 128px 128px;
+      padding-top: 152px;
+      margin-top: 25px;
+    }
+
+    .location {
+      margin-top: 12px;
+    }
+  }
+
+  .calls {
+    height: 181px;
+    margin-top: 20px;
+
+    .details {
+      padding-top: 15px;
+    }
+
+    .icon {
+      float: left;
+      @extend .icon-128;
+      height: 80px;
+      width: 80px;
+      margin-right: 12px;
+    }
+  }
+
+  .operational {
+    text-align: center;
+    padding-top: 20px;
+
+    h4 {
+      color: $dark-blue;
+      border: 0;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 24px;
+    }
+  }
+
+  .spacer {
+    padding-top: 20px;
+  }
+}
+
+.left-track, .left-station {
+  p {
+    margin: 10px 0;
+  }
+
+  .data-row.left {
+    text-align: left;
+  }
+
+  .data-box {
+    margin-right: 15px;
+  }
+
+  .track-control .data-row {
+    margin-top: 30px;
+  }
+
+  .sensor-data {
+    height: 253px;
+    margin-bottom: 20px;
+
+    .details {
+      display: table;
+      margin: 25px 0;
+      height: 75px;
+      width: 100%;
+
+      div {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    .icon {
+      float: left;
+      display: block;
+      width: 75px;
+      height: 75px;
+      background: $light-gray;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1em;
+
+      span {
+        margin-left: 95px;
+      }
+    }
+
+    .btn-row span {
+      width: 170px;
+    }
+  }
+}
+
+.left-track {
+  .modal-mask {
+    @extend .container;
+    background: rgba(0,0,0,0.5);
+
+    p {
+      margin: 5px 0;
+    }
+
+    h2 {
+      height: 70px;
+      border-bottom: 2px solid $light-gray;
+      line-height: 64px;
+
+      .icon-75 {
+        width: 64px;
+        height: 64px;
+        background-size: 64px 64px;
+      }
+    }
+  }
+
+  .content {
+    position: absolute;
+    width: 690px;
+    height: 540px;
+    top: 100px;
+    left: 50%;
+    margin-left: (-690px / 2);
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $dark-blue;
+    text-transform: uppercase;
+    padding: 15px;
+  }
+
+  h2, h3, strong {
+    color: $dark-blue;
+  }
+
+  h2 {
+    margin-top: 0;
+
+    .subheader {
+      float: right;
+      font-size: 0.6em;
+      color: darken($light-gray, 30%);
+      margin-right: 18%;
+    }
+  }
+
+  .xh3 {
+    margin-top: 25px;
+  }
+
+  .icon-75 {
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+  }
+
+  .spacer {
+    margin: 25px 0;
+  }
+
+  .connected-device {
+    text-align: center;
+
+    .icon-75 {
+      float: none;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+.left-station {
+  p {
+    margin: 5px 0;
+  }
+
+  .surveillance {
+    h2 {
+      margin-bottom: 18px;
+    }
+
+    .video-wrap, video {
+      width: 545px;
+      height: 306px;
+    }
+
+    .video-wrap {
+      position: relative;
+
+      span {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 3px solid $bad-color;
+      }
+    }
+
+    .btn-row span {
+      width: 200px;
+    }
+  }
+
+  .btn-row {
+    margin-top: 26px;
+  }
+
+  .agents-list {
+    padding-top: 25px;
+
+    .p {
+      strong {
+        margin-right: 12px;
+      }
+      margin-bottom: 7px;
+    }
+  }
+
+  .surveillance-times {
+    padding-right: 4px;
+
+    li {
+      width: 100%;
+      border-bottom: 2px solid $light-gray;
+      cursor: pointer;
+    }
+
+    .time {
+      height: 34px;
+      line-height: 34px;
+    }
+
+    .count-inner {
+      padding-left: 10px;
+      display: table-cell;
+      font-size: 24px;
+
+      p {
+        margin: 10px 0;
+      }
+      // height: 105px;
+      // line-height: 105px;
+    }
+
+    li:hover, .count, .selected {
+      color: white;
+      background: $highlight-color;
+    }
+  }
+
+  .infrastructure {
+    height: 170px;
+    margin-bottom: 20px;
+
+    .details {
+      display: table;
+      margin-top: 15px;
+      height: 75px;
+      // width: 100%;
+
+      div {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    .icon-75 {
+      float: left;
+      display: block;
+      width: 75px;
+      height: 75px;
+      margin-right: 22px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.2em;
+
+      span {
+        height: 20px;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .hq-overview {
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .hq-map {
+    width: 485px;
+    height: 300px;
+    background: transparent url(../imgs/rcc/CiscoLive_SF2014_RCC_HQMap.png) no-repeat 0 0;
+  }
+}
+
+// ==========
+
+.signal-strength {
+  vertical-align: middle;
+
+  &, span {
+    display: inline-block;
+    height: 23px;
+  }
+
+  span {
+    display: inline-block;
+    width: 11px;
+    height: 23px;
+    border-radius: 6px;
+    margin-left: 4px;
+  }
+
+  @for $i from 1 through 10 {
+    span:nth-child(#{$i}) {
+      @if $i < 3 {
+        background: $bad-color;
+      } @else if $i < 7 {
+        background: $warning-color;
+      } @else {
+        background: $good-color;
+      }
+    }
+  }
+  @for $i from 0 through 9 {
+    @for $j from $i+1 through 10 {
+      &.strength-#{$i} span:nth-child(#{$j}) {
+        background: $light-gray;
+      }
+    }
+  }
+}

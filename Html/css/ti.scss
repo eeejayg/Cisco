@@ -1,0 +1,532 @@
+$icon-font-path:  '../fonts/thirdparty/bootstrap/';
+
+@import 'bootstrap';
+@import 'font-awesome/font-awesome';
+@import '_ui-kit';
+@import '_ui-icons';
+@import 'ti/_ti-map';
+@import 'ti/_ti-animations';
+@import 'ti/_ti-taskManager';
+
+h3 {
+	font-weight: bold;
+}
+.secret-menu {
+	position: absolute;
+	left: 0;
+	width: 300px;
+	background-color: black;
+	height: 768px;
+}
+
+.clickable {
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.topZIndex {
+	z-index: 1000000;
+}
+
+.set-web-ex {
+	.buttons {
+		width: 300px;
+		margin: 20px auto 0 auto;
+	}
+}
+
+
+/* CONTAINER */
+.container {
+	background: $dark-gray url(../imgs/ti/home_screen.jpg) no-repeat;
+	background-size: 100%;
+	background-position: center center;
+	height: 768px;
+	width: 1024px;
+	top: 50%;
+	left: 50%;
+	margin-left: -512px;
+	margin-top: -384px;
+	position: fixed;
+	overflow: hidden;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	.app {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform-style: preserve-3d;
+
+		.clock {
+			width: 60px;
+			margin: 2px auto;
+			font-size: 13px;
+			color: $whitish;
+		}
+
+		.app-icon {
+			position: absolute;
+			bottom: -120px;
+			height: 80px;
+			width: 80px;
+			background-position: center;
+		}
+
+		&.app-0 {
+			.app-icon {
+				background: url(../imgs/ti/ti_icon.jpg) no-repeat;
+				left: 50%;
+				margin-left: -40px;
+				background-size: contain;
+			}
+		}
+
+		&.app-1 {
+			background: url('../imgs/ti/scrubbed_Safari_screenshot.jpg') no-repeat;
+			background-size: contain;
+			background-position: center center;
+
+			.clock {
+				color: $dark-gray;
+			}
+
+			.url {
+				color: $dark-gray;
+				position: absolute;
+				left: 190px;
+				top: 27px;
+			}
+
+			.app-icon {
+				background: url(../imgs/ti/safari_icon.png) no-repeat;
+				background-size: contain;
+			}
+		}
+		&.app-2 {
+			background: url('../imgs/ti/CiscoLive2014_SanFran_webex_screenshot.jpg') no-repeat;
+			background-size: contain;
+			background-position: center center;
+
+
+			.repair-log {
+				position: absolute;
+				width: 510px;
+				background: $whitish;
+				top: 140px;
+				left: 70px;
+
+				table {
+					th, td {
+						font-size: 12px;
+						padding: 12px 16px;
+						border: 1px solid #eee;
+						text-align: center;
+					}
+				}
+			}
+
+			.app-icon {
+				background: url(../imgs/ti/webex_icon.png) no-repeat;
+				background-size: contain;
+				right: 0;
+			}
+		}
+	}
+}
+
+
+header {
+	background: $primary-color;
+	color: $whitish;
+	padding: 0 20px 10px 20px;
+	line-height: 25px;
+	font-size: 12px;
+
+	.status-bar {
+		* {
+			vertical-align: middle;
+		}
+		.ipad {
+			display: inline-block;
+			background-position: center;
+			&.battery {
+				height: 20px;
+				width: 20px;
+				background: url(../imgs/ti/battery.png) no-repeat;
+				background-size: contain;
+			}
+
+			&.bluetooth {
+				height: 15px;
+				width: 15px;
+				background: url(../imgs/ti/bluetooth.png) no-repeat;
+				background-size: contain;
+			}
+
+			&.wifi {
+				margin-top: -4px;
+				height: 15px;
+				width: 15px;
+				background: url(../imgs/ti/wifi.png) no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+
+
+	.status-break {
+		margin: 0 10px;
+	}
+
+	a {
+		color: $whitish;
+		&:hover {
+			color: $whitish;
+		}
+	}
+
+	.logo {
+		@extend .icon-128.logo;
+		height: 80px;
+		width: 80px;
+		position: absolute;
+		top: -25px;
+		left: 50%;
+		margin-left: -40px;
+	}
+
+	.icon {
+		@extend .icon-128.white.lock;
+		display: inline-block;
+		height: 15px;
+		width: 15px;
+		vertical-align: text-bottom;
+	}
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: $whitish;
+	border-top: 1px solid $light-gray;
+
+	.nav-item {
+		text-align: center;
+		padding: 10px 0;
+
+		&.selected {
+			background: $highlight-color;
+			color: white;
+			.icon {
+				@extend .icon-128.white;
+			}
+		}
+		.icon {
+			@extend .icon-128;
+			display: block;
+			height: 30px;
+			width: 30px;
+			margin: auto;
+		}
+	}
+}
+
+.page-wrapper {
+	background: $dark-gray;
+	position: relative;
+	height: 648px;
+}
+
+.page {
+	background: $whitish;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	perspective: 100px;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* VIEW DIAGNOSTICS */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.page-1 {
+	.inner-container {
+		width: 80%;
+		margin: 40px auto;
+	}
+
+	.broken-panel {
+		background: url(../imgs/ti/electrical_panel_drawing.png) no-repeat;
+		height: 550px;
+		width: 330px;
+		background-size: cover;
+		position: relative;
+		.blinky-light {
+			position: absolute;
+			top: 134px;
+			left: 115px;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			background-color: $bad-color;
+			z-index: 10;
+			&.goodToGo {
+				background-color: #43BB43;
+				-webkit-animation: blinky-light 5s linear forwards;
+			}
+		}
+	}
+
+	.alert-block {
+		margin-top: 40px;
+		.icon {
+			@extend .icon-256.orange.warning_shield;
+			height: 80px;
+			width: 80px;
+			float: left;
+		}
+
+		.message {
+			float: left;
+			width: 345px;
+			margin-left: 20px;
+			h2 {
+				margin-top: 0;
+				color: $alert-color;
+			}
+		}
+	}
+
+	.call-block {
+		float: left;
+		width: 130px;
+		margin: 20px 0 30px 0px;
+		h5 {
+			margin: 1px 0;
+		}
+
+		.icon {
+			background: $light-gray url(../imgs/ti/worker-ipad-130.jpg) no-repeat;
+			height: 130px;
+			width: 130px;
+		}
+
+		.call-bar {
+			@extend .text-center;
+			color: $whitish;
+			width: 130px;
+			height: 35px;
+			padding-top: 5px;
+			background: $primary-color;
+		}
+
+		&:hover {
+				cursor: pointer;
+				.call-bar {
+				background: $highlight-color;
+			}
+		}
+	}
+
+	.operating-block {
+		float: left;
+		width: 300px;
+		margin: 40px 0 30px 10px;
+		h5 {
+			margin: 1px 10px;
+		}
+		.operating-graph {
+			height: 160px;
+			width: 300px;
+			margin-left: 10px;
+			.x-label {
+				bottom: -17px;
+				left: 42%;
+			}
+		}
+	}
+
+	button {
+		width: 100%;
+	}
+}
+.operating-graph {
+	margin-top: 15px;
+	position: relative;
+	height: 150px;
+	width: 250px;
+	background: transparent url(../imgs/ti/maintenance_history_chart.png) no-repeat;
+	background-size: contain;
+	font-size: 12px;
+	.y-label {
+		position: absolute;
+		top: -17px;
+		left: 0;
+	}
+	.x-label {
+		position: absolute;
+		bottom: 0;
+		left: 35%;
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* INSPECTOR */
+/* ++++++++++++++++++++++++++++++++++++ */
+.inspector-wrap {
+	top: 254px;
+	left: 245px;
+	position: absolute;
+	z-index: 100;
+
+
+	.inspector-object {
+		height: 25px;
+		width: 25px;
+		background: $good-color;
+		-webkit-animation: inspector 3s linear infinite;
+		border-radius: 25px;
+	}
+
+	&.walker {
+		-webkit-animation: walking 30s linear forwards;
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* ALERT PULL OUT */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.alert-pull-out {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	top: 0;
+	width: 280px;
+	padding: 0 15px;
+	background-color: $whitish;
+	border-left: 1px solid $light-gray;
+	z-index: 1000000;
+
+	h2 {
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+	h3 {
+		font-weight: bold;
+	}
+
+	.alert-wrap {
+		display: table;
+		& > * {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.icon {
+			@extend .icon-256.orange.warning_shield;
+			height: 50px;
+			width: 50px;
+		}
+		.message {
+			color: $alert-color;
+			padding: 10px;
+		}
+	}
+
+	.panel-data-wrap {
+		.block {
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 10px;
+
+			&:nth-of-type(1) {
+				margin-right: 20px;
+			}
+		}
+	}
+
+	.chart-connection {
+		.bar {
+			display: inline-block;
+			background-color: $light-gray;
+			height: 42px;
+			width: 13px;
+			margin: 5px;
+			border-radius: 5px;
+			&:first-child {
+				background-color: $bad-color;
+			}
+
+			&:nth-of-type(2){
+				background-color: $warning-color;
+			}
+
+			&.connected {
+				background-color: $good-color;
+			}
+		}
+	}
+
+	.chart-electrical {
+		height: 150px;
+		width: 250px;
+		background: transparent url(../imgs/ti/maintenance_history_chart.png) no-repeat;
+	}
+
+	.buttons {
+		position: absolute;
+		bottom: 40px;
+		width: 250px;
+	}
+
+	button {
+		clear: both;
+		@extend .btn;
+		@extend .btn-primary;
+		width: 100%;
+		margin: 2px 0
+	}
+}
+
+/* ++++++++++++++++++++++++++++++++++++ */
+/* MODAL */
+/* ++++++++++++++++++++++++++++++++++++ */
+
+.modal {
+	position: absolute;
+	background-color: rgba(0,0,0,0.2);
+	display: block;
+	overflow: hidden;
+
+	.modal-dialog {
+		margin-top: 25%;
+	}
+
+	.icon {
+		@extend .icon-128.orange.warning_shield;
+		height: 50px;
+		width: 50px;
+	}
+
+	button {
+		width: 48%;
+	}
+}

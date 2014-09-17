@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Surveillance</title>
+</head>
+<body>
+  <style type="text/css">
+    body {
+      background: black;
+    }
+    .container {
+      padding: 0 20px;
+      width: 1090px;
+      heihgt: 720px;
+      background: white;
+      position: absolute;
+      left: 50%;
+      margin-left: -545px;
+    }
+
+    .wrap {
+      span {
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #f00;
+      }
+    }
+
+    video {
+      width: 1090px;
+      height: 612px;
+    }
+
+    div {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    button {
+      margin: 15px 15px 0;
+    }
+
+    textarea {
+      width: 500px;
+      height: 100px;
+    }
+  </style>
+  <div class="container">
+    <div class="wrap">
+      <video src="video/v12065871.mp4"></video>
+    </div>
+    <div>
+      <input class="time" /> <br/>
+      <button class="backward">Back</button>
+      <button class="forward">Forward</button>
+    </div>
+    <div>
+      <textarea></textarea>
+    </div>
+    <!--
+wwb0 0.7091743119266055,0.3382352941176471
+wwb3 0.7541284403669725,0.3235294117647059
+s1 0.5834862385321101,0.380718954248366
+s4 0.5770642201834862,0.3954248366013072
+x2 0.44036697247706424,0.4934640522875817
+x5 0.3981651376146789,0.5571895424836601
+    -->
+  </div>
+  <script src="js/thirdparty/jquery-2.1.1.min.js"></script>
+  <script src="js/thirdparty/underscore-1.6.0-min.js"></script>
+  <script type="text/javascript">
+    var time = 0.0;
+    var delta = 1.0;
+    var posX = $('video').offset().left;
+    var posY = $('video').offset().top;
+    var boxes = (function() {
+      var top, left, randBox = [];
+      for (var i=0; i<30; i++) {
+        top = _.random(40, 612 -40);
+        left = _.random(40, 1090 - 40);
+        randBox.push({
+          time: i,
+          left: left,
+          top: top
+        });
+      }
+      return randBox;
+    })();
+
+    function setTime(time) {
+      $('video').get(0).currentTime = time;
+      $('.time').val(time);
+      $('.wrap span').remove();
+      boxes.forEach(function(box){
+        if (box.time <= time && time <= box.time+3) {
+          $('.wrap').append('<span style="' +
+            'top:' + box.top +
+            ';left:' + box.left +
+          '">' + box.time + '</span>')
+        }
+      });
+    }
+
+    $('.forward').on('click', function(){
+      time = Math.min(time + delta, 30.0);
+      setTime(time);
+    });
+    $('.backward').on('click', function(){
+      time = Math.max(time - delta, 0.0);
+      setTime(time);
+    });
+    $('video').on('click', function(evt){
+      var x = (evt.pageX - posX) / 1090;
+      var y = (evt.pageY - posY) / 612;
+      var msg = "\n" + 'x ' + x + ',' + y;
+      $('textarea').val($('textarea').val() + msg);
+    });
+    setTimeout(function(){
+      setTime(0);
+    }, 500);
+  </script>
+</body>
+</html>

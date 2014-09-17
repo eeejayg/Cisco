@@ -1,0 +1,73 @@
+.page-1 {
+	.left-section {
+		@extend .col-xs-4;
+
+		.section-header {
+			@extend .tableness;
+
+			.header-text{
+				padding: 0 0 0 30px;
+			}
+
+		}
+
+		.customer-icon {
+			background: url(../imgs/cca/customer-DX80-200.jpg) no-repeat;
+			background-position: center;
+			background-size: contain;
+			height: 200px;
+			width: 150px;
+		}
+
+		li {
+			.icon {
+				@extend .icon-35.gray;
+				border-right: 1px solid $medium-gray;
+			}
+
+			&.selected {
+				.icon {
+					@extend .icon-35.white;
+				}
+			}
+		}
+	}
+
+	.center-section {
+		@extend .col-xs-8;
+		padding: 0 50px;
+		&.trans-info .loader {
+			position: absolute;
+			top: 90px;
+			left: 700px;
+			height: 20px;
+			width: 20px;
+			font-size: 20px;
+		}
+		.loader {
+			height: 50px;
+			width: 50px;
+			font-size: 50px;
+		}
+		
+		.section-header {
+			@extend .tableness;
+		}
+
+		.icon {
+			@extend .icon-256.blue.pos_terminal;
+			height: 100px;
+			width: 100px;
+		}
+
+		.add-destination {
+			.fa {
+				margin-right: 5px;
+			}
+		}
+
+		.tickets {
+			margin-top: 50px;
+		}
+	}
+}

@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html ng-app="CCA">
+<head>
+	<link type="text/css" rel="stylesheet" href="css/cca.css" />
+  <title>Call Center Agent</title>
+</head>
+<body ng-controller="ccaMainCtrl">
+
+	<div class="container" style="background: white;">
+		<div class="start-screen" ng-show="startScreen" ng-click="loader()"></div>
+		<header>
+			<span class="col-xs-5">
+				<div class="row">
+					<button type="button" class="toggle logo-bar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span ng-click="onClickReset()">Hello, Jim Grubb</span>
+				</div>
+			</span>
+			<span class="col-xs-2"><div class="logo"></div></span>
+			<span class="col-xs-5">
+				<div class="row">
+					<div class="options pull-right">
+						<button class="phone"></button>
+						<button class="document"></button>
+						<button class="search"></button>
+						<button class="toggle" ng-click="onClickReset()">
+							<span class="icon-square"></span>
+							<span class="icon-square"></span>
+							<span class="icon-square"></span>
+						</button>
+					</div>
+				</div>
+			</span>
+			<div class="clearfix"></div>
+		</header>
+
+		<div class="page-wrapper">
+
+
+			<div class="page page-0" ng-show="currentPage == 0">
+				<!-- CALL QUEUE -->
+				<div class="left-section" ng-controller="ccaCallQueueCtrl">
+					<div class="list-block">
+						<div class="section-header">
+							<h2>Call Queue</h2>
+						</div>
+						<ul>
+							<li ng-repeat="call in calls" ng-class="{ selected: call.isSelected }" ng-click="onCallSelect(call)">
+								<span ng-if="call.type == 'Kiosk'">
+									<span class="text">
+										{{ call.location }}
+									</span>
+									<div class="icon contact"></div>
+								</span>
+								<span ng-if="call.type == 'Mobile'">
+									<span class="text">
+										Mobile Call
+									</span>
+									<div class="icon phone"></div>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- CUSTOMER INFO -->
+				<div class="center-section" ng-controller="ccaCustomerInfoCtrl">
+					<div class="section-header">
+						<div class="customer-icon"></div>
+						<h1>Customer Info</h1>
+					</div>
+
+					<div class="body">
+						<form>
+							<span class="input {{ input.css }}" ng-repeat="input in topInputs">
+								<label>{{ input.label }}</label>
+								<input type="{{ input.type }}" value="{{ input.value }}" />
+							</span>
+							<div class="left-form-col">
+								<span class="input {{ input.css }}" ng-repeat="input in leftInputs" ng-class="{ radio: input.type == 'radio' || input.type == 'checkbox' }">
+									<label>{{ input.label }}</label>
+									<input type="{{ input.type }}" value="{{ input.value }}" />
+								</span>
+								<span class="input lg"><button>Cancel</button></span>
+								<span class="input lg"><button class="btn-primary">Save</button></span>
+							</div>
+							<div class="right-form-col">
+									<span class="input {{ input.css }}" ng-repeat="input in rightInputs" ng-class="{ radio: input.type == 'radio' || input.type == 'checkbox' }">
+									<span ng-if="input.type != 'radio' && input.type != 'checkbox'">
+										<label>{{ input.label }}</label>
+										<input type="{{ input.type }}" value="{{ input.value }}" />
+									</span>
+									<span ng-if="input.type == 'radio' || input.type == 'checkbox'">
+										<input id="{{ input.id }}" ng-model="tripType" type="{{ input.type }}" name="{{ input.name }}" value="{{ input.value }}" />
+										<label for="{{ input.id }}"><span></span>{{ input.label }}</label>
+									</span>
+								</span>
+								<div class="notes">
+									<label>Notes:</label>
+									<textarea></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<!-- STATION PANEL -->
+				<div class="right-section" ng-controller="ccaStationPanelCtrl">
+					<div class="list-block station-stats">
+						<div class="section-header">
+							<h2>Station #283</h2>
+						</div>
+						<ul>
+							<li ng-repeat="stat in stats">
+								<div class="icon {{ stat.icon }}"></div>
+								<div class="data" ng-repeat="data in stat.data">
+									<label ng-show="data.label">{{ data.label }}</label>
+									<span class="value">{{  data.value }}</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="list-block train-schedules">
+						<div class="section-header">
+							<h2>Train Schedules</h2>
+						</div>
+						<ul>
+							<li ng-repeat="train in trains">
+								<div class="data {{ data.class }}" ng-repeat="data in train.data">
+									{{ data.value }}
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="page page-1" ng-show="currentPage == 1">
+				<!-- CUSTOMER INFO -->
+				<div class="left-section" ng-controller="ccaCustomerMenuCtrl">
+					<div class="list-block">
+						<div class="section-header">
+							<div class="customer-icon"></div>
+							<div class="header-text">
+								<h2>{{ customer().firstName }} {{ customer().lastName }}</h2>
+								<h3 ng-click="customer()">Current Location:</h3>
+								<h4>{{ customer().trans[0].station }} {{ customer().trans[0].kiosk }}</h4>
+							</div>
+						</div>
+						<ul>
+							<li ng-repeat="item in menuItems" ng-click="toggleSelectMenu(item)" ng-class="{ selected: item.isSelected }">
+								<div class="icon {{ item.icon }}"></div>
+								<div class="text">{{ item.text }}</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- TRANSACTION LIST -->
+				<div class="center-section trans-list" ng-controller="ccaTransactionListCtrl" ng-show="showTransactionList">
+					<div class="list-block">
+						<ul>
+							<li ng-repeat="trans in customer().trans" ng-click="onTransactionClick(trans)">
+								<div class="icon"></div>
+								<div class="text">
+									<h2>Trans #{{ trans.id }}</h2>
+									<h4>{{ currentTrans.station }} {{ currentTrans.kiosk }}</h4>
+									<h4>Date: {{ trans.datestamp }}</h4>
+									<h4>Details: {{ trans.tripType }}</h4>
+									<h4>Status: {{ trans.status }}</h4>
+								</div>
+								<div class="loader" ng-show="trans.showLoader"><span class="fa spinner fa-spinner"></span></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- TRANSACTION INFO -->
+				<div class="center-section trans-info" ng-controller="ccaTransactionInfoCtrl" ng-show="showTransactionInfo">
+					<div class="loader" ng-show="showLoader"><span class="fa fa-spinner spinner"></span></div>
+
+					<div class="section-header">
+						<div class="icon"></div>
+						<div class="header-text">
+							<h2>Trans #{{ currentTrans.id }}</h2>
+							<h4>{{ currentTrans.station }} {{ currentTrans.kiosk }}</h4>
+							<h4>Date: {{ currentTrans.datestamp }}</h4>
+							<h4>Status: {{ currentTrans.status }}</h4>
+						</div>
+					</div>
+					<div class="body">
+
+						<form>
+							<tabset type="pills">
+								<tab ng-repeat="tab in tripTabs" heading="{{ tab.title }}" select="$parent.loadTab()">
+									<ul>
+										<li ng-repeat="tripLeg in tab.tripLegs">
+											<span class="input {{ input.css }} {{ input.type }}" ng-repeat="input in tripLeg.options">
+												<span >
+													<label>{{ input.label }}</label>
+													<input type="{{ input.type }}" value="{{ input.value }}" />
+												</span>
+											</span>
+											<span ng-if="tab.showAddLeg" class="fa fa-times" ng-click="removeTripLeg($index)"></span>
+										</li>
+									</ul>
+									<a href="#" ng-if="tab.showAddLeg" class="add-destination" ng-click="addTripLeg()"><span class="fa fa-plus"></span>Add Destination</a>
+								</tab>
+							</tabset>
+							<div class="tickets">
+								<label>Tickets</label>
+								<span class="input xs">
+									<select ng-model="myCount" ng-options="count.name for count in passengerCount" class="passengers form-control"></select>
+								</span>
+								<span class="input xs">
+									<select ng-model="myClass" ng-options="class.name for class in travelClasses" class="class form-control"></select>
+								</span>
+							</div>
+							<div class="footer buttons">
+								<span class="input sm"><button>Cancel Order</button></span>
+								<span class="input sm"><button class="btn-primary" ng-click="confirmPurchase()">Confirm Purchase</button></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="page page-2" ng-show="currentPage == 2">
+				<div class="station-map" ng-controller="ccaStationMapCtrl">
+
+					<div ng-repeat="overlay in overlays" class="overlay {{ overlay.name }}" ng-show="overlay.value"></div>
+					<div class="menu">
+						<div class="list-block">
+							<ul>
+								<li ng-repeat="overlay in overlays" ng-click="toggleOverlay(overlay)">
+									<span class="radio">
+										<input id="{{ overlay.id }}" type="checkbox" ng-model="overlay.value" name="{{ overlay.name }}" />
+										<label for="{{ overlay.id }}">{{ overlay.label }}</label>
+										<div class="loader" ng-show="overlay.loading"><span class="fa fa-spin fa-spinner"></span></div>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="kiosk"></div>
+					<div class="platform">D</div>
+					<button ng-click="hideStationMap()" class="fa fa-times btn-default"></button>
+				</div>
+			</div>
+
+			<div class="page page-3" ng-show="currentPage == 3">
+				<div class="loader text-center">
+					<h2>Loading Application...</h2>
+					<h1 class="fa fa-spin fa-spinner"></h1>
+				</div>
+			</div>
+
+		</div>
+
+		<footer>
+			<nav>
+				<button><span class="back"></span></button>
+				<button><span class="home"></span></button>
+				<button><span class="recent"></span></button>
+			</nav>
+		</footer>
+
+			<!-- THE MODAL -->
+		<div class="modal" ng-show="showModal" ng-controller="ccaModalCtrl">'
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="customer-icon" ng-click="onClickReset()"></div>
+						<div class="header-text">
+							<h2>{{ customer().firstName }} {{ customer().lastName }}</h2>
+							<h3>Current Location:</h3>
+							<h4>{{ customer().trans[0].station }} {{ customer().trans[0].kiosk }}</h4>
+						</div>
+						<div>
+							<div class="confirmation-box">
+								<h4>Confirmation #</h4>
+								<h2>32FWA027</h2>
+								<small>Los Angeles Union Station (LAX) to<br />
+								Metrocenter Transit Station (PNX) CWI-3250</small>
+							</div>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="qr"></div>
+						<div class="text">
+							<h2>Booking Details</h2>
+							<ul>
+								<li ng-repeat="detail in details">
+									<label>{{ detail.label }}:</label>
+									<span class="value">{{ detail.value }}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div class="buttons">
+							<button ng-click="viewStationMap()">View Station Map</button>
+							<button ng-click="viewStationMap()">Seating</button>
+							<button ng-click="sendConfirmation('Confirmation Sent!')">Send Confirmation</button>
+							<button ng-click="sendConfirmation('Directions Sent!')">Send Directions</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="toast" ng-show="toast.isVisible">
+			<span>{{ toast.text }}</span>
+		</div>
+	</div>
+
+
+<script src="js/thirdparty/jquery-2.1.1.min.js"></script>
+<script src="js/thirdparty/bootstrap/bootstrap.js"></script>
+<script src="js/thirdparty/angular/angular.min.js"></script>
+<script src="js/thirdparty/angular/angular-animate.min.js"></script>
+<script src="js/thirdparty/angular/angular-touch.min.js"></script>
+<script src="js/thirdparty/angular/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script src="js/thirdparty/underscore-1.6.0-min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/cca/config.js"></script>
+<script src="js/cca/ccaMainCtrl.js"></script>
+<script src="js/cca/ccaCallQueueCtrl.js"></script>
+<script src="js/cca/ccaCustomerInfoCtrl.js"></script>
+<script src="js/cca/ccaStationPanelCtrl.js"></script>
+<script src="js/cca/ccaCustomerMenuCtrl.js"></script>
+<script src="js/cca/ccaTransactionListCtrl.js"></script>
+<script src="js/cca/ccaTransactionInfoCtrl.js"></script>
+<script src="js/cca/ccaModalCtrl.js"></script>
+<script src="js/cca/ccaStationMapCtrl.js"></script>
+</body>
+</html>

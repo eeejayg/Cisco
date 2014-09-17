@@ -1,0 +1,128 @@
+.ng-hide-add, .ng-hide-remove {
+	display: block!important;
+}
+
+.spinner {
+	-webkit-animation: spinner 1s linear;
+}
+
+.kiosk {
+	-webkit-animation: blink-kiosk 1s ease infinite;
+}
+
+.platform {
+	-webkit-animation: blink-platform 1s ease infinite;
+}
+
+/* Toast Animation */
+.toast {
+	-webkit-animation: toastIn 500ms ease both;
+}
+
+.toast.ng-hide {
+	-webkit-animation: toastOut 500ms ease both;
+}
+
+/* Fade In & Out Animation */
+.page-2 {
+	-webkit-animation: fadeIn 100ms ease both;
+}
+
+.page-1.ng-hide {
+	-webkit-animation: fadeOut 500ms ease both;
+}
+
+/* Train Animation */
+/*.overlay.seats {
+	-webkit-animation: moveFromRight 2s ease both;
+}
+
+.overlay.seats.ng-hide {
+	-webkit-animation: moveToLeft 2s ease both;
+}*/
+
+/* Transaction List */
+.trans-list {
+	overflow-y: hidden;
+	-webkit-animation: moveFromLeft 1s ease both;
+}
+
+.trans-list.ng-hide {
+	overflow-y: hidden;
+	-webkit-animation: moveToLeft 1s ease both;
+}
+
+.trans-info.ng-hide-remove {
+	-webkit-animation: fadeIn 2s ease both;
+}
+
+.trans-info.ng-hide-add {
+	-webkit-animation: fadeOut 2s ease both;
+}
+
+.trans-list li:first-child {
+	-webkit-animation: blink-transaction 2s ease infinite;
+}
+
+/* MOVE TO LEFT & MOVE FROM RIGHT */
+
+@-webkit-keyframes moveToLeft {
+	from { -webkit-transform: translateX(0%); }
+	to { -webkit-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromLeft {
+	from { -webkit-transform: translateX(-100%); }
+	to { -webkit-transform: translateX(0%); }
+}
+
+@-webkit-keyframes moveFromRight {
+	from { -webkit-transform: translateX(100%); }
+	to { -webkit-transform: translateX(0%); }
+}
+
+/* FADE IN & OUT */
+
+@-webkit-keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* POPPING IN & OUT */
+
+@-webkit-keyframes toastIn {
+	from { opacity: 0; -webkit-transform: translateY(200%); }
+	to { opacity: 0.8; -webkit-transform: translateY(0%); }
+}
+
+@-webkit-keyframes toastOut {
+	from { opacity: 0.8; -webkit-transform: translateY(0%); }
+	to { opacity: 0; -webkit-transform: translateY(200%); }
+}
+
+/* BLINKING */
+
+@-webkit-keyframes blink-transaction {
+	0%, 100% { background-color: rgba(102, 153, 204, 0.26); }
+	50% { background-color: transparent; }
+}
+
+@-webkit-keyframes blink-kiosk {
+	0%, 100% { background-color: $alert-color; }
+	50% { background-color: $whitish; }	
+}
+
+@-webkit-keyframes blink-platform {
+	0%, 100% { color: $primary-color; }
+	50% { color: $alert-color; }	
+}
+
+@-webkit-keyframes spinner {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(270deg); }
+}

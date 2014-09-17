@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html ng-app="RCC">
+<head>
+  <link type="text/css" rel="stylesheet" href="css/rcc.css" />
+  <title>Regional Control Center - Middle</title>
+</head>
+<body>
+  <div ng-view></div>
+
+  <script type="text/ng-template" id="middle-overview">
+    <div class="container middle-overview">
+      <div class="row header">
+        <span class="left">Hello, Jim Grubb | Operator #100564</span>
+        <span class="h2 middle">Regional Control Center</span>
+        <span class="right">Secured network status: | Logoff</span>
+      </div>
+      <div class="row">
+        <div class="map-wrap">
+
+          <div class="the-map"></div>
+          <!-- THE ROUTES -->
+          <div class="route route-{{ route.id }}" ng-repeat="route in routeObjects">
+            <div id="Section{{ section.id }}"
+                 class="section section-{{ section.id }}"
+                 ng-repeat="section in route.sections"
+                 ng-click="toggleSelect(section)"
+                 ng-class="{ selected: section.isSelected, hint: section.id == 0 }"
+                 ng-style="{ zIndex: section.isSelected ? 100 : 1}">
+              <div ng-show="section.isSelected && section.showInfoBubble" class="info-bubble {{ section.infoBubble }}">
+                <div class="info-bubble-arrow"></div>
+                <div class="hack48">
+                  <h2>{{ section.title }}</h2>
+                  <ul>
+                    <li ng-repeat="stat in section.stats"><label>{{ stat.name }}:</label> {{ stat.value }}</li>
+                  </ul>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="leg leg-{{ leg.id }}" ng-repeat="leg in section.legs" ng-class="{ disabled: section.isDisabled }"></div>
+              <div class="stop stop-{{ stop.id }}" ng-repeat="stop in section.stops"><div></div></div>
+            </div>
+          </div>
+
+          <!-- THE TRAINS -->
+          <div ng-repeat="train in trainObjects"
+               ng-click="toggleSelect(train)"
+               id="Train{{ train.id }}"
+               class="train-object train-{{ train.id }}"
+               ng-class="{ hint: train.id == 0 }">
+            <div ng-show="train.isSelected && train.showInfoBubble" class="info-bubble {{ train.infoBubble }}">
+              <div class="info-bubble-arrow"></div>
+              <div class="hack48">
+                <h2>{{ train.title }}</h2>
+                <div class="stat" ng-repeat="stat in train.stats">
+                  <div class="data-box small">
+                    <div class="radial-wrap">
+                      <div class="radial percent-{{ stat.percent }}"></div>
+                      <div class="inner"><span>{{ stat.value }}</span></div>
+                    </div>
+                    <span class="title">{{ stat.name }}</span>
+                    <span class="subtitle">({{ stat.units }})</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <!-- THE STATIONS -->
+          <div ng-repeat="station in stationObjects"
+               ng-click="toggleSelect(station)"
+               ng-class="{ selected: station.isSelected, hint: station.id == 1 || station.id == 8 }"
+               ng-style="{ zIndex: station.isSelected ? 100 : 1}"
+               id="Station{{ station.id }}"
+               class="station-object station-{{ station.id }}">
+            <div ng-show="station.isSelected && station.showInfoBubble" class="info-bubble {{ station.infoBubble }}">
+              <div class="info-bubble-arrow"></div>
+              <div class="hack48">
+                <h2>{{ station.title }}</h2>
+                <ul>
+                  <li ng-repeat="stat in station.stats"><label>{{ stat.name }}:</label> {{ stat.value }}</li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+        </div><!-- /map-wrap -->
+      </div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="info-bubble">
+    <div class="info-bubble {{ location }}">
+      <div class="info-bubble-arrow"></div>
+      <div ng-transclude></div>
+      <div class="clearfix"></div>
+    </div>
+  </script>
+
+  <script src="js/thirdparty/jquery-2.1.1.min.js"></script>
+  <script src="js/thirdparty/underscore-1.6.0-min.js"></script>
+  <script src="js/thirdparty/angular/angular.min.js"></script>
+  <script src="js/thirdparty/angular/angular-route.min.js"></script>
+  <script src="js/rcc/config.js"></script>
+  <script src="js/keyboard.js"></script>
+  <script src="js/rcc/main.js"></script>
+  <script src="js/rcc/storage.js"></script>
+  <script src="js/rcc/middle_ctrl.js"></script>
+</body>
+</html>

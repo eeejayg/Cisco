@@ -1,0 +1,453 @@
+$icon-font-path:  '../fonts/thirdparty/bootstrap/';
+
+@import 'bootstrap';
+@import 'font-awesome/font-awesome';
+@import '_ui-kit';
+@import 'cca/_animations';
+@import 'cca/_typography';
+@import 'cca/_icons';
+@import 'cca/_form';
+@import 'cca/_page0';
+@import 'cca/_page1';
+
+body {
+	background: black;
+}
+
+.container {
+	position: fixed;
+	width: 1920px;
+	height: 1080px;
+	padding: 0;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.start-screen {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: black;
+	z-index: 10;
+}
+
+.loader {
+	margin-top: 240px;
+}
+
+.tableness {
+	display: table;
+	width: 100%;
+
+	&>* {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+button {
+	@extend .btn;
+	border-radius: 0;
+	padding: 12px;
+	background-color: $primary-color;
+	color: $whitish;
+
+	&:hover, &:focus {
+		color: $whitish;
+		background-color: $highlight-color;
+	}
+
+	&.btn-primary {
+		background-color: $primary-color;
+		color: $whitish;
+	}
+}
+
+header {
+	background: $primary-color;
+	color: $whitish;
+	padding: 5px 20px;
+	line-height: 37px;
+
+	.logo {
+		@extend .icon-128.logo;
+		height: 100px;
+		width: 100px;
+		float: left;
+		margin: -28px 0 -32px 20px;
+	}
+
+	button {
+		height: 30px;
+		width: 30px;
+		padding: 6px 12px;
+		display: block;
+		float: left;
+		margin-right: 20px;
+
+		&.toggle {
+			background: transparent;
+			border: 0;
+
+			&.logo-bar {
+				display: none;
+				width: 50px;
+			}
+
+			.icon-bar {
+				display: block;
+				width: 35px;
+				height: 2px;
+				margin: 5px 0;
+				border-radius: 1px;
+				background: $light-gray;
+			}
+		}
+	}
+
+	.options {
+			button {
+				margin: 3px 6px 0 6px;
+				height: 30px;
+				width: 30px;
+				display: block;
+
+				&.phone {
+					@extend .icon-128.phone.white;
+				}
+				&.document {
+					@extend .icon-128.document.white;
+				}
+				&.search {
+					@extend .icon-128.search.white;
+				}
+
+				&.toggle {
+					margin: 0;
+				}
+			}
+		}
+
+
+
+	.icon-square {
+		display: block;
+		height: 5px;
+		width: 5px;
+		margin: 2px auto;
+		background: $light-gray;
+	}
+}
+
+.page-wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.page {
+	background: $whitish;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.section-header {
+	border-bottom: 1px solid $medium-gray;
+}
+
+.left-section {
+	height: 100%;
+	background: $light-gray;
+	overflow-y: auto;
+	z-index: 100;
+}
+
+.center-section {
+	height: 100%;
+	overflow-y: auto;
+
+	.section-header {
+		margin: 60px 0 30px 0;
+		height: 235px;
+	}
+
+	.body {
+		@extend .clearfix;
+	}
+}
+
+.right-section {
+	height: 100%;
+	background: $light-gray;
+}
+
+.list-block {
+	margin-bottom: 50px;
+	ul {
+		@extend .row;
+	}
+	li {
+		border-bottom: 1px solid $medium-gray;
+		padding: 30px 20px;
+		cursor: pointer;
+		@extend .tableness;
+
+		&.selected {
+			background-color: $highlight-color;
+			color: $whitish;
+		}
+
+		.icon {
+			height: 35px;
+			width: 70px;
+		}
+
+		.text {
+			line-height: 35px;
+			padding: 0 35px;
+		}
+
+		.data {
+			label {
+				color: #666666;
+				font-weight: normal;
+				text-transform: none;
+			}
+
+			.value {
+				display: block;
+				line-height: 5px;
+				text-transform: none;
+			}
+
+			&.primary {
+				color: $highlight-color;
+			}
+
+			&.warning {
+				color: $alert-color;
+			}
+
+			&.bad {
+				color: $bad-color;
+			}
+		}
+	}
+}
+
+footer {
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	background: black;
+
+	nav {
+		width: 500px;
+		margin: 0 auto;
+
+		button {
+			@extend .col-xs-4;
+			background-color: transparent;
+			span {
+				display: block;
+				height: 30px;
+				width: 30px;
+				margin: auto;
+			}
+		}
+
+		.back {
+			@extend .nav-128.back;
+		}
+		.home {
+			@extend .nav-128.home;
+		}
+		.recent {
+			@extend .nav-128.recent;
+		}
+	}
+}
+
+.modal {
+	display: block;
+	position: absolute;
+	overflow-y: auto;
+	background: rgba(0,0,0,0.3);
+
+	.modal-dialog {
+		margin: 130px auto 0 auto;
+	}
+
+	.modal-header, .modal-body {
+		@extend .tableness;
+
+		&>* {
+			padding: 30px;
+		}
+	}
+
+	.customer-icon {
+		background: url(../imgs/cca/customer-DX80-200.jpg) no-repeat;
+		background-position: center;
+		background-size: contain;
+		height: 150px;
+		width: 150px;
+	}
+
+	.confirmation-box {
+		background: $highlight-color;
+		color: $whitish;
+		text-align: center;
+		padding: 15px 10px;
+
+		h2 {
+			line-height: 44px;
+		}
+
+		h4 {
+			font-size: 16px;
+		}
+	}
+
+	.qr {
+		width: 180px;
+		background: url('../imgs/cca/qrcode.png') no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+
+	.modal-body {
+		width: 640px;
+		margin: 0 auto;
+	}
+
+	.buttons {
+		width: 500px;
+		margin: 0 auto;
+
+		button {
+			width: 47%;
+			margin: 10px 5px;
+		}
+	}
+}
+
+
+.toast {
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+	padding: 20px 40px;
+	font-size: 16px;
+	background-color: $dark-gray;
+	color: $whitish;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 0 10px 3px rgba(200,200,200,1);
+	z-index: 10000;
+	opacity: 1;
+	bottom: 40px;
+}
+
+.station-map {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: $whitish url('../imgs/cca/CiscoLive_SF2014_DX80_StationMap.png') no-repeat center center;
+	top: 0;
+
+	.kiosk {
+		height: 78px;
+		width: 84px;
+		background: url('../imgs/cca/station_kiosk_blue.png');
+		background-size: cover;
+		background-position: center;
+		border-radius: 8px;
+		position: absolute;
+		top: 314px;
+		left: 570px;
+		&.orange {
+			background: url('../imgs/cca/station_kiosk_orange.png');
+		}
+	}
+
+	.platform {
+		height: 100px;
+		width: 100px;
+		background: $whitish;
+		color: $alert-color;
+		padding: 25px;
+		font-size: 46px;
+		text-align: center;
+		position: absolute;
+		top: 698px;
+		left: 1237px;
+	}
+
+	.menu {
+		display: block;
+		position: absolute;
+		padding: 0 15px;
+		background: $whitish;
+		border: 1px solid $medium-gray;
+		top: 50px;
+		left: 50px;
+
+		.list-block{
+			margin-bottom: 0;
+			li {
+				position: relative;
+			}
+		}
+
+		.loader {
+			margin: 0;
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			right: 10px;
+			top: 28px;
+		}
+	}
+
+	.overlay {
+		position: absolute;
+
+		&.heat {
+			height: 100%;
+			width: 100%;
+			top: 0;
+			background: transparent url('../imgs/cca/CiscoLive2014_SanFran_ipad_stationmap_heatmap.png') no-repeat center center;
+		}
+
+		&.seats {
+			height: 168px;
+			width: 2574px;
+			bottom: 47px;
+			left: -221px;
+			background: transparent url('../imgs/cca/CiscoLive2014_SanFran_DX80_train_mixed.png') no-repeat center center;
+		}
+	}
+
+	button {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 54px;
+		color: $medium-gray;
+		border: 0;
+
+		&:hover {
+			background-color: $whitish;
+		}
+	}
+}

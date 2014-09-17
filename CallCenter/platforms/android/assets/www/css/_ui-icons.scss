@@ -1,0 +1,301 @@
+/* TI ICONS */
+
+
+@mixin icon($title, $size) {
+	background: url('../imgs/icons/' + $size + 'px/' + $title + '-' + $size + '.png') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+@mixin icon-white($title, $size) {
+	background: url('../imgs/icons/' + $size + 'px/' + $title + '-' + $size + '-white.png') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+@mixin icon-orange($title, $size) {
+	background: url('../imgs/icons/' + $size + 'px/' + $title + '-' + $size + '-orange.png') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.icon-128 {
+	&.arrow { @include icon(arrow, 128); }
+	&.calendar { @include icon(calendar, 128); }
+	&.cloud { @include icon(cloud, 128); }
+	&.connected_no_data { @include icon(connected_no_data, 128); }
+	&.contact { @include icon(contact, 128); }
+	&.electricity { @include icon(electricity, 128); }
+	&.electronics { @include icon(electronics, 128); }
+	&.engineering { @include icon(engineering, 128); }
+	&.hdd { @include icon(hdd, 128); }
+	&.headset { @include icon(headset, 128); }
+	&.help { @include icon(help, 128); }
+	&.info { @include icon(info, 128); }
+	&.logo { @include icon(logo, 128); }
+	&.lock { @include icon(lock, 128); }
+	&.map { @include icon(map, 128); }
+	&.online { @include icon(online, 128); }
+	&.phone1 { @include icon(phone1, 128); }
+	&.pos_terminal { @include icon(pos_terminal, 128); }
+	&.railway_station { @include icon(railway_station, 128); }
+	&.read_message { @include icon(read_message, 128); }
+	&.road_closure { @include icon(road_closure, 128); }
+	&.speedometer { @include icon(speedometer, 128); }
+	&.ssd { @include icon(ssd, 128); }
+	&.talk { @include icon(talk, 128); }
+	&.ticket { @include icon(ticket, 128); }
+	&.traffic-light2 { @include icon(traffic-light2, 128); }
+	&.trafficlight { @include icon(trafficlight, 128); }
+	&.train { @include icon(train, 128); }
+	&.tunnel { @include icon(tunnel, 128); }
+	&.warning_shield { @include icon(warning_shield, 128); }
+	&.workers { @include icon(workers, 128); }
+
+	&.white {
+		&.arrow { @include icon-white(arrow, 128); }
+		&.calendar { @include icon-white(calendar, 128); }
+		&.connected_no_data { @include icon-white(connected_no_data, 128); }
+		&.electricity { @include icon-white(electricity, 128); }
+		&.electronics { @include icon-white(electronics, 128); }
+		&.engineering { @include icon-white(engineering, 128); }
+		&.headset { @include icon-white(headset, 128); }
+		&.help { @include icon-white(help, 128); }
+		&.info { @include icon-white(info, 128); }
+		&.lock { @include icon-white(lock_filled, 128); }
+		&.map { @include icon-white(map, 128); }
+		&.online { @include icon-white(online, 128); }
+		&.phone1 { @include icon-white(phone1, 128); }
+		&.pos_terminal { @include icon-white(pos_terminal, 128); }
+		&.railway_station { @include icon-white(railway_station, 128); }
+		&.read_message { @include icon-white(read_message, 128); }
+		&.road_closure { @include icon-white(road_closure, 128); }
+		&.speedometer { @include icon-white(speedometer, 128); }
+		&.ssd { @include icon-white(ssd, 128); }
+		&.talk { @include icon-white(talk, 128); }
+		&.ticket { @include icon-white(ticket, 128); }
+		&.traffic-light2 { @include icon-white(traffic-light2, 128); }
+		&.trafficlight { @include icon-white(trafficlight, 128); }
+		&.train { @include icon-white(train, 128); }
+		&.tunnel { @include icon-white(tunnel, 128); }
+		&.warning_shield { @include icon-white(warning_shield, 128); }
+		&.workers { @include icon-white(workers, 128); }
+	}
+
+	&.orange {
+		&.arrow { @include icon-orange(arrow, 128); }
+		&.calendar { @include icon-orange(calendar, 128); }
+		&.connected_no_data { @include icon-orange(connected_no_data, 128); }
+		&.electricity { @include icon-orange(electricity, 128); }
+		&.electronics { @include icon-orange(electronics, 128); }
+		&.engineering { @include icon-orange(engineering, 128); }
+		&.headset { @include icon-orange(headset, 128); }
+		&.help { @include icon-orange(help, 128); }
+		&.info { @include icon-orange(info, 128); }
+		&.lock { @include icon-orange(lock, 128); }
+		&.map { @include icon-orange(map, 128); }
+		&.online { @include icon-orange(online, 128); }
+		&.phone1 { @include icon-orange(phone1, 128); }
+		&.pos_terminal { @include icon-orange(pos_terminal, 128); }
+		&.railway_station { @include icon-orange(railway_station, 128); }
+		&.read_message { @include icon-orange(read_message, 128); }
+		&.road_closure { @include icon-orange(road_closure, 128); }
+		&.speedometer { @include icon-orange(speedometer, 128); }
+		&.ssd { @include icon-orange(ssd, 128); }
+		&.talk { @include icon-orange(talk, 128); }
+		&.ticket { @include icon-orange(ticket, 128); }
+		&.traffic-light2 { @include icon-orange(traffic-light2, 128); }
+		&.trafficlight { @include icon-orange(trafficlight, 128); }
+		&.train { @include icon-orange(train, 128); }
+		&.tunnel { @include icon-orange(tunnel, 128); }
+		&.warning_shield { @include icon-orange(warning_shield, 128); }
+		&.workers { @include icon-orange(workers, 128); }
+	}
+}
+
+.icon-256 {
+	&.arrow { @include icon(arrow, 256); }
+	&.calendar { @include icon(calendar, 256); }
+	&.cloud { @include icon(cloud, 256); }
+	&.contact { @include icon(contact, 256); }
+	&.connected_no_data { @include icon(connected_no_data, 256); }
+	&.electricity { @include icon(electricity, 256); }
+	&.electronics { @include icon(electronics, 256); }
+	&.engineering { @include icon(engineering, 256); }
+	&.hdd { @include icon(hdd, 256); }
+	&.headset { @include icon(headset, 256); }
+	&.help { @include icon(help, 256); }
+	&.info { @include icon(info, 256); }
+	&.logo { @include icon(logo, 256); }
+	&.lock { @include icon(lock, 256); }
+	&.map { @include icon(map, 256); }
+	&.online { @include icon(online, 256); }
+	&.phone1 { @include icon(phone1, 256); }
+	&.pos_terminal { @include icon(pos_terminal, 256); }
+	&.railway_station { @include icon(railway_station, 256); }
+	&.read_message { @include icon(read_message, 256); }
+	&.road_closure { @include icon(road_closure, 256); }
+	&.speedometer { @include icon(speedometer, 256); }
+	&.ssd { @include icon(ssd, 256); }
+	&.talk { @include icon(talk, 256); }
+	&.ticket { @include icon(ticket, 256); }
+	&.traffic-light2 { @include icon(traffic-light2, 256); }
+	&.trafficlight { @include icon(trafficlight, 256); }
+	&.train { @include icon(train, 256); }
+	&.tunnel { @include icon(tunnel, 256); }
+	&.warning_shield { @include icon(warning_shield, 256); }
+	&.workers { @include icon(workers, 256); }
+
+	&.white {
+		&.arrow { @include icon-white(arrow, 256); }
+		&.calendar { @include icon-white(calendar, 256); }
+		&.connected_no_data { @include icon-white(connected_no_data, 256); }
+		&.electricity { @include icon-white(electricity, 256); }
+		&.electronics { @include icon-white(electronics, 256); }
+		&.engineering { @include icon-white(engineering, 256); }
+		&.headset { @include icon-white(headset, 256); }
+		&.help { @include icon-white(help, 256); }
+		&.info { @include icon-white(info, 256); }
+		&.lock { @include icon-white(lock_filled, 256); }
+		&.map { @include icon-white(map, 256); }
+		&.online { @include icon-white(online, 256); }
+		&.phone1 { @include icon-white(phone1, 256); }
+		&.pos_terminal { @include icon-white(pos_terminal, 256); }
+		&.railway_station { @include icon-white(railway_station, 256); }
+		&.read_message { @include icon-white(read_message, 256); }
+		&.road_closure { @include icon-white(road_closure, 256); }
+		&.speedometer { @include icon-white(speedometer, 256); }
+		&.ssd { @include icon-white(ssd, 256); }
+		&.talk { @include icon-white(talk, 256); }
+		&.ticket { @include icon-white(ticket, 256); }
+		&.traffic-light2 { @include icon-white(traffic-light2, 256); }
+		&.trafficlight { @include icon-white(trafficlight, 256); }
+		&.train { @include icon-white(train, 256); }
+		&.tunnel { @include icon-white(tunnel, 256); }
+		&.warning_shield { @include icon-white(warning_shield, 256); }
+		&.workers { @include icon-white(workers, 256); }
+	}
+
+	&.orange {
+		&.arrow { @include icon-orange(arrow, 256); }
+		&.calendar { @include icon-orange(calendar, 256); }
+		&.connected_no_data { @include icon-orange(connected_no_data, 256); }
+		&.electricity { @include icon-orange(electricity, 256); }
+		&.electronics { @include icon-orange(electronics, 256); }
+		&.engineering { @include icon-orange(engineering, 256); }
+		&.headset { @include icon-orange(headset, 256); }
+		&.help { @include icon-orange(help, 256); }
+		&.info { @include icon-orange(info, 256); }
+		&.lock { @include icon-orange(lock, 256); }
+		&.map { @include icon-orange(map, 256); }
+		&.online { @include icon-orange(online, 256); }
+		&.phone1 { @include icon-orange(phone1, 256); }
+		&.pos_terminal { @include icon-orange(pos_terminal, 256); }
+		&.railway_station { @include icon-orange(railway_station, 256); }
+		&.read_message { @include icon-orange(read_message, 256); }
+		&.road_closure { @include icon-orange(road_closure, 256); }
+		&.speedometer { @include icon-orange(speedometer, 256); }
+		&.ssd { @include icon-orange(ssd, 256); }
+		&.talk { @include icon-orange(talk, 256); }
+		&.ticket { @include icon-orange(ticket, 256); }
+		&.traffic-light2 { @include icon-orange(traffic-light2, 256); }
+		&.trafficlight { @include icon-orange(trafficlight, 256); }
+		&.train { @include icon-orange(train, 256); }
+		&.tunnel { @include icon-orange(tunnel, 256); }
+		&.warning_shield { @include icon-orange(warning_shield, 256); }
+		&.workers { @include icon-orange(workers, 256); }
+	}
+}
+
+.icon-512 {
+	&.calendar { @include icon(calendar, 512); }
+	&.cloud { @include icon(cloud, 512); }
+	&.contact { @include icon(contact, 512); }
+	&.connected_no_data { @include icon(connected_no_data, 512); }
+	&.electricity { @include icon(electricity, 512); }
+	&.electronics { @include icon(electronics, 512); }
+	&.engineering { @include icon(engineering, 512); }
+	&.hdd { @include icon(hdd, 512); }
+	&.headset { @include icon(headset, 512); }
+	&.help { @include icon(help, 512); }
+	&.info { @include icon(info, 512); }
+	&.logo { @include icon(logo, 512); }
+	&.lock { @include icon(lock, 512); }
+	&.map { @include icon(map, 512); }
+	&.online { @include icon(online, 512); }
+	&.phone1 { @include icon(phone1, 512); }
+	&.pos_terminal { @include icon(pos_terminal, 512); }
+	&.railway_station { @include icon(railway_station, 512); }
+	&.read_message { @include icon(read_message, 512); }
+	&.road_closure { @include icon(road_closure, 512); }
+	&.speedometer { @include icon(speedometer, 512); }
+	&.ssd { @include icon(ssd, 512); }
+	&.talk { @include icon(talk, 512); }
+	&.ticket { @include icon(ticket, 512); }
+	&.traffic-light2 { @include icon(traffic-light2, 512); }
+	&.trafficlight { @include icon(trafficlight, 512); }
+	&.train { @include icon(train, 512); }
+	&.tunnel { @include icon(tunnel, 512); }
+	&.warning_shield { @include icon(warning_shield, 512); }
+	&.workers { @include icon(workers, 512); }
+
+	&.white {
+		&.arrow { @include icon-white(arrow, 512); }
+		&.calendar { @include icon-white(calendar, 512); }
+		&.connected_no_data { @include icon-white(connected_no_data, 512); }
+		&.electricity { @include icon-white(electricity, 512); }
+		&.electronics { @include icon-white(electronics, 512); }
+		&.engineering { @include icon-white(engineering, 512); }
+		&.headset { @include icon-white(headset, 512); }
+		&.help { @include icon-white(help, 512); }
+		&.info { @include icon-white(info, 512); }
+		&.lock { @include icon-white(lock_filled, 512); }
+		&.map { @include icon-white(map, 512); }
+		&.online { @include icon-white(online, 512); }
+		&.phone1 { @include icon-white(phone1, 512); }
+		&.pos_terminal { @include icon-white(pos_terminal, 512); }
+		&.railway_station { @include icon-white(railway_station, 512); }
+		&.read_message { @include icon-white(read_message, 512); }
+		&.road_closure { @include icon-white(road_closure, 512); }
+		&.speedometer { @include icon-white(speedometer, 512); }
+		&.ssd { @include icon-white(ssd, 512); }
+		&.talk { @include icon-white(talk, 512); }
+		&.ticket { @include icon-white(ticket, 512); }
+		&.traffic-light2 { @include icon-white(traffic-light2, 512); }
+		&.trafficlight { @include icon-white(trafficlight, 512); }
+		&.train { @include icon-white(train, 512); }
+		&.tunnel { @include icon-white(tunnel, 512); }
+		&.warning_shield { @include icon-white(warning_shield, 512); }
+		&.workers { @include icon-white(workers, 512); }
+	}
+
+	&.orange {
+		&.arrow { @include icon-orange(arrow, 512); }
+		&.calendar { @include icon-orange(calendar, 512); }
+		&.connected_no_data { @include icon-orange(connected_no_data, 512); }
+		&.electricity { @include icon-orange(electricity, 512); }
+		&.electronics { @include icon-orange(electronics, 512); }
+		&.engineering { @include icon-orange(engineering, 512); }
+		&.headset { @include icon-orange(headset, 512); }
+		&.help { @include icon-orange(help, 512); }
+		&.info { @include icon-orange(info, 512); }
+		&.lock { @include icon-orange(lock, 512); }
+		&.map { @include icon-orange(map, 512); }
+		&.online { @include icon-orange(online, 512); }
+		&.phone1 { @include icon-orange(phone1, 512); }
+		&.pos_terminal { @include icon-orange(pos_terminal, 512); }
+		&.railway_station { @include icon-orange(railway_station, 512); }
+		&.read_message { @include icon-orange(read_message, 512); }
+		&.road_closure { @include icon-orange(road_closure, 512); }
+		&.speedometer { @include icon-orange(speedometer, 512); }
+		&.ssd { @include icon-orange(ssd, 512); }
+		&.talk { @include icon-orange(talk, 512); }
+		&.ticket { @include icon-orange(ticket, 512); }
+		&.traffic-light2 { @include icon-orange(traffic-light2, 512); }
+		&.trafficlight { @include icon-orange(trafficlight, 512); }
+		&.train { @include icon-orange(train, 512); }
+		&.tunnel { @include icon-orange(tunnel, 512); }
+		&.warning_shield { @include icon-orange(warning_shield, 512); }
+		&.workers { @include icon-orange(workers, 512); }
+	}
+}
